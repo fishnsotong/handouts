@@ -11,8 +11,9 @@
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{graphics/}} % set of paths to search for images
-\usepackage{amsmath,amsthm}  % extended mathematics
-\usepackage[version=4]{mhchem}
+  \usepackage{amsmath,amsthm,mathrsfs}  % extended mathematics
+  \usepackage[version=4]{mhchem}        % extended chemistry
+\usepackage{xcolor}   % colors (like highlighting)
 \usepackage{booktabs} % book-quality tables
 \usepackage{units}    % non-stacked fractions and better unit spacing
 \usepackage{multicol} % multiple column layout facilities
@@ -188,8 +189,23 @@ in its ground state, we require the $1\ce{s}$ orbital from each \ce{H} atom.
 \end{equation}
 
 \textbf{A note on orbital coefficients.} The orbital coefficients $c$ provide us information
-about electron density in a molecule. $|c_A| > |c_B|$ would imply more electron density close
+about electron density in a molecule. \textit{In this case,} \ce{H2+} is centrosymmetric. 
+The electron is equally likely to be found aroun each nucleus A and B. Therefore, $c_A^2 = c_B^2 \rightarrow c_A = \pm c_B$.
+$|c_A| > |c_B|$ would imply more electron density close
 to $A$ than $B$.
+
+\begin{example}[Molecular Orbitals of \ce{H2+}]
+
+  \begin{equation}
+    \psi(\ce{H2+}) = c_A[1\ce{s_}_A (\mathbf{r}_A) \pm 1\ce{s_}_B (\mathbf{r}_B)]
+  \end{equation}
+
+\begin{itemize}
+  \item $1\ce{s_}_A (\mathbf{r}_A) + 1\ce{s_}_B (\mathbf{r}_B) \rightarrow$ constructive interference
+  \item $1\ce{s_}_A (\mathbf{r}_A) - 1\ce{s_}_B (\mathbf{r}_B) \rightarrow$ destructive interference
+\end{itemize}
+
+\end{example}
 
 \section{The Variational Principle}
 
@@ -223,7 +239,6 @@ As the wavefunction of the electrons ($\psi_e$) depends on the position of the n
 \begin{enumerate}
   \item Separate the total wavefunction for a molecule (containing electrons and nuclei) into a product of two parts: an electronic part and a nuclear part.
   \item Treat the nuclei classically, as masses with well-defined positions, which can then be fixed in space to determine the electronic wavefunction.
-
 \end{enumerate}
 
 Much of our formal treatment of polyatomic electronic structure, such as \textbf{point groups}
@@ -251,23 +266,6 @@ are important for understanding transitions between electronic states; we will h
   I'll figure this out sometime later.
   
 \end{definition}
-
-$$\begin{array}{c|cccccccccc|cc} \hline
-  D_\mathrm{4h} & E & 2C_4 & C_2 & 2C_2' & 2C_2'' & i & 2S_4 & \sigma_\mathrm{h} & 2\sigma_\mathrm{v} & 2\sigma_\mathrm{d} & & \\ \hline
-  \mathrm{A_{1g}} & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & & x^2+y^2,z^2 \\
-  \mathrm{A_{2g}} & 1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & -1 & -1 & R_z & \\
-  \mathrm{B_{1g}} & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & & x^2-y^2 \\
-  
-  \mathrm{B_{2g}} & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & & xy \\
-  \mathrm{E_g} & 2 & 0 & -2 & 0 & 0 & 2 & 0 & -2 & 0 & 0 & (R_x,R_y) & (xz,yz) \\
-  \mathrm{A_{1u}} & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & & \\
-  \mathrm{A_{2u}} & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & z & \\
-  \mathrm{B_{1u}} & 1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & -1 & 1 & & \\
-  \mathrm{B_{2u}} & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & & \\
-  \mathrm{E_u} & 2 & 0 & -2 & 0 & 0 & -2 & 0 & 2 & 0 & 0 & (x,y) & \\ \hline
-  \end{array}$$
-  
-
 
 \bibliography{quantum}
 \bibliographystyle{plainnat}

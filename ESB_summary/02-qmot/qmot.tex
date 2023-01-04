@@ -1,0 +1,163 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{2. Qualitative Molecular Orbital Theory \thanks{Wayne~W.~Z. Yeo}}
+
+\author[ESB]{Electronic States and Bonding\thanks{Course Instructors: Michael Bearpark, Joāo Pedro Malhaldo, Andreas Kafizas}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm,mathrsfs}  % extended mathematics
+\usepackage[version=4]{mhchem}        % extended chemistry
+\usepackage{xcolor}   % colors (like highlighting)
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\setlength\fboxsep{7px}
+
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+We have very quickly exhausted the quantum chemical problems we can solve exactly.
+Yet in a way, we have hardly done any chemistry. As we will see, we cannot solve the 
+Schrödinger equation exactly for molecules, and we will need to resort to approximations.
+With them, we can numerically solve the many-electron Schrödinger
+equation for molecules, find the energies of their electronic states, and begin to
+understand their bonding. \textbf{With these, we can make chemistry a computational science.}
+\end{abstract}
+
+%\printclassoptions
+
+\newthought{Even the simplest molecule}, \ce{H2+} consists of three particles, and its
+Schrödinger equation cannot be solved analytically. This simple molecule
+will allows us to work out the basic ideas of what will become \textbf{molecular orbital theory}.
+
+\section{Symmetry Elements}
+
+\subsection{Reading Character Tables}
+Each point group has its own \textbf{character table}.
+
+\begin{example}[Finding irreducible representations of the central atom]
+  Here, we find the symmetry labels for the \ce{p} and \ce{d} orbitals of \ce{Pt},
+  the central atom in \ce{[PtCl4]^{2-}}.
+
+  \begin{enumerate}
+    \item First, you have to know the geometry of your compound. For example, \ce{[PtCl4]^{2-}} is square planar.
+    \item The next step is to determine the point group of the compound from this geometry by identifying the symmetry elements that it posesses. \textit{Use a point group flow chart}. The point group of the \ce{[PtCl4]^{2-}} complex is $D_{4\mathrm{h}}$.
+    \item Now, consult the character table of the point group we determined in the previous step.
+    The character table of the $D_{4\mathrm{h}}$ point group is shown here:
+  \end{enumerate}
+
+  $$\begin{array}{c|cccccccccc|cc} \hline
+  D_\mathrm{4h} & E & 2C_4 & C_2 & 2C_2' & 2C_2'' & i & 2S_4 & \sigma_\mathrm{h} & 2\sigma_\mathrm{v} & 2\sigma_\mathrm{d} & & \\ \hline
+  \mathrm{A_{1g}} & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & 1 & & x^2+y^2,z^2 \\
+  \mathrm{A_{2g}} & 1 & 1 & 1 & -1 & -1 & 1 & 1 & 1 & -1 & -1 & R_z & \\
+  \mathrm{B_{1g}} & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & 1 & -1 & & x^2-y^2 \\
+  
+  \mathrm{B_{2g}} & 1 & -1 & 1 & -1 & 1 & 1 & -1 & 1 & -1 & 1 & & xy \\
+  \mathrm{E_g} & 2 & 0 & -2 & 0 & 0 & 2 & 0 & -2 & 0 & 0 & (R_x,R_y) & (xz,yz) \\
+  \mathrm{A_{1u}} & 1 & 1 & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & & \\
+  \mathrm{A_{2u}} & 1 & 1 & 1 & -1 & -1 & -1 & -1 & -1 & 1 & 1 & z & \\
+  \mathrm{B_{1u}} & 1 & -1 & 1 & 1 & -1 & -1 & 1 & -1 & -1 & 1 & & \\
+  \mathrm{B_{2u}} & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & 1 & -1 & & \\
+  \mathrm{E_u} & 2 & 0 & -2 & 0 & 0 & -2 & 0 & 2 & 0 & 0 & (x,y) & \\ \hline
+  \end{array}$$
+
+  Since the three p-orbitals point directly along the $x$, $y$, and $z$ axes, they show the same transformational properties as the basis vectors,
+  and consequently get the same symmetry labels, i.e.
+
+  \begin{align*}
+  \left.\begin{array}{c}
+  \mathrm{p}_x \\ \mathrm{p}_y \end{array}\right\} &\rightarrow \mathrm{E_u} \\
+  \mathrm{p}_z &\rightarrow \mathrm{A_{2u}} \ .
+  \end{align*}
+  
+  The five d-orbitals show the same transformational properties as their quadratic function counterparts and thus they get the symmetry labels, i.e.
+  
+  \begin{align*}
+  \mathrm{d}_{xy} &\rightarrow \mathrm{B_{2g}} \\
+  \left.\begin{array}{c}
+  \mathrm{d}_{xz} \\ \mathrm{d}_{yz} \end{array}\right\} &\rightarrow \mathrm{E_g} \\
+  \mathrm{d}_{z^2} &\rightarrow \mathrm{A_{1g}} \\
+  \mathrm{d}_{x^2 - y^2} &\rightarrow \mathrm{B_{1g}} \ .
+  \end{align*}
+  
+\end{example}
+
+\subsection{Reading Mulliken Labels}
+
+\begin{tabular}{ l l l }
+  \hline
+    \ce{A} & &singly degenerate, symmetric about $C_n$ axis ($+1$ in tables)  \\
+
+    \ce{B} & &singly degenerate, antisymmetric about $C_n$ axis ($-1$ in tables)  \\
+
+    \ce{E} & &doubly generate  \\
+
+    \ce{T} & &triply generate  \\
+    subscript 1 & e.g. \ce{A1} &symmetric about $C_2$ axis $\perp$ to $C_n$ axis or $\sigma_v$ if no $C_2$ present \\
+    subscript 2 & e.g. \ce{A2} &antisymmetric about $C_2$ axis $\perp$ to $C_n$ axis or $\sigma_v$ if no $C_2$ present \\
+    g & e.g. \ce{E_{2}}$_{\mathrm{g}}$ &\textit{gerade}, symmetric to inversion $i$ \\
+    u & e.g. \ce{B_{2}}$_{\mathrm{u}}$ &\textit{ungerade}, antisymmetric to inversion $i$ \\
+    superscript ' & e.g. \ce{A}' &symmetric to $\sigma_h$ \\
+    superscript '' & e.g. \ce{E}'' &antisymmetric to $\sigma_h$ \\
+  \hline
+  \end{tabular}
+
+\section{Symmetry Adapted Linear Combinations}
+
+\subsection{Reducible Representations}
+When we construct \textbf{symmetry adapted linear combinations} to build an MO diagram, we choose the $z$
+axis as the \textit{principal axis}
+\sidenote{Almost all character tables follow the conventions stated in Mulliken's paper "Report on Notation for the Spectra of Polyatomic Molecules" \textit{The Journal of Chemical Physics} 23, \textbf{1997} (1955).}
+ (the axis of highest symmetry). 
+
+\section{Appendix A: Symmetry Transformations}
+
+\begin{definition}[Symmetry Transformation]
+  A symmetry transformation is a change in our point of view that does not change the results of possible experiments.
+  If an observer $O$ sees a system in a state represented by a ray $\mathscr{R}$ or $\mathscr{R}_{1}$ or $\mathscr{R}_{2} \ldots,$ then an equivalent observer $O^{\prime}$ who looks at the same system will observe it in a different state, represented by a ray $\mathscr{R}^{\prime}$ or $\mathscr{R}_{1}^{\prime}$ or $\mathscr{R}_{2}^{\prime} \ldots,$ respectively, but the two observers must find the same probabilities
+$$
+P\left(\mathscr{R} \rightarrow \mathscr{R}_{n}\right)=P\left(\mathscr{R}^{\prime} \rightarrow \mathscr{H}_{n}^{\prime}\right)
+$$
+\end{definition}
+
+
+
+
+\bibliography{quantum}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
