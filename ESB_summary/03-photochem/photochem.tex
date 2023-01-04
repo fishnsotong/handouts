@@ -1,0 +1,106 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{3. Photochemistry\thanks{Wayne~W.~Z. Yeo}}
+
+\author[ESB]{\textnormal{CHEM 50003} Electronic States and Bonding\thanks{Course Instructors: Robert Field}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\setlength\fboxsep{7px}
+
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+Dealing with multi-electron systems require more approximations, including the \textbf{Born-Oppenheimer approximation}.
+
+\end{abstract}
+
+\begin{enumerate}
+  \item Allowed electronic transitions must involve a change symmetry.
+  \item The transition dipole moment is a one-electron operator.
+  \item Allowed electronic transitions preserve spin.
+  \item Electronic transitions are always accompanied by vibrational transitions. [Franck-Condon Principle]
+\end{enumerate}
+
+%\printclassoptions
+
+In general, we see that \textbf{allowed electronic transitions must involve a change in symmetry}. \cite{atkins2014atkins}
+
+At this point, we have nearly completed our introduction to quantum mechanics 
+and we can investigate the electronic structure of molecules.
+
+The Hamiltonian of \ce{H2+} is expressed as follows:
+
+\begin{equation}
+  \hat{H} = -\frac{1}{2}\nabla^2_r - \frac{\nabla^2_A}{2M_A}
+\end{equation}
+
+\section{The Frank-Condon Principle}
+
+\begin{theorem}[The Variational Theorem] $E_{\mathrm{avg}} > E_0$ for any function $\psi$. \marginnote{This
+  makes physical sense, because energy of the ground state is, by definition, the lowest possible energy.}
+
+  \begin{proof}
+    Expand $\psi$ as a linear combination of unknown eigenstates $\phi_n$ of the Hamiltonian:
+    \begin{equation*}
+      \psi = \sum_n a_n \phi_n
+    \end{equation*}
+  \end{proof}
+  
+\end{theorem}
+
+The variational method does two things for us. First, it gives us a way to compare two 
+different wavefunctions and to show which one is closer to the wavefunction of the ground state. 
+
+\section{Bimolecular Photochemistry}
+
+\begin{equation}
+  \frac{\phi_{F}}{\phi_{F}'} = \frac{\tau_0}{\tau} = \frac{k_0 + k_Q[Q]}{k_0}
+\end{equation}
+
+\section{Fluoresence Resonance Energy Transfer}
+
+\bibliography{photochem}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
