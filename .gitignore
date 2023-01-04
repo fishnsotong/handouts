@@ -1,0 +1,17 @@
+# against apple's desktop crap
+.DS_Store
+
+# general ugly stuff for LaTeX
+# *.png
+*.pdf
+*.dvi
+*.toc
+*.aux
+*.log
+*.out
+*.fdb_latexmk
+*.synctex.gz
+
+*.bbl
+*.blg
+*.fls
