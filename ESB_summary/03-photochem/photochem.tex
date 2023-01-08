@@ -49,36 +49,56 @@
 
 \begin{abstract}
 \noindent
-Dealing with multi-electron systems require more approximations, including the \textbf{Born-Oppenheimer approximation}.
-
+Electronic selection rules. Origin and analysis of vibronic coupling, based on the \textbf{Franck-Condon principle}.
+Absorption and emission. Unimolecular photochemistry. Bimolecular photochemistry. FRET. Electron transfer mechanisms.
 \end{abstract}
-
-\section{Introduction}
-
-When an electronic transition occurs, the nuclei are inevitably subjected to a change in electrostatic force, due to the
-redistribution of electronic charge. The \textbf{potential energy surface}, which governs nuclear motion, changes as a 
-
-\begin{enumerate}
-  \item Allowed electronic transitions must involve a change symmetry.
-  \item The transition dipole moment is a one-electron operator.
-  \item Allowed electronic transitions preserve spin.
-  \item Electronic transitions are always accompanied by vibrational transitions. [Franck-Condon Principle]
-\end{enumerate}
 
 %\printclassoptions
 
-In general, we see that \textbf{allowed electronic transitions must involve a change in symmetry}. \cite{atkins2014atkins}
+\newthought{Electronic spectra are incredibly complex}, due to the stimulation of simultaneous vibrational and rotational
+transitions. But why are electronic transitions so strongly coupled to nuclear motion?
 
-At this point, we have nearly completed our introduction to quantum mechanics 
-and we can investigate the electronic structure of molecules.
+When an electronic transition occurs, the nuclei are inevitably subjected to a change in electrostatic force, due to the
+redistribution of electronic charge. The \textbf{potential energy surface}, which governs nuclear motion, changes as a
+direct result of electronic transitions.
 
-The Hamiltonian of \ce{H2+} is expressed as follows:
+As a result, the nuclei respond by breaking into vibration to arrive at their new equilibrium geometry. Simultaneous
+electronic and vibrational transitions are \textbf{vibronic transitions}.
 
-\begin{equation}
-  \hat{H} = -\frac{1}{2}\nabla^2_r - \frac{\nabla^2_A}{2M_A}
-\end{equation}
+\section{Selection Rules}
+
+There are two selection rules governing electronic transitions, which can be expressed as various parts of the\marginnote{g/u formally only apply to
+molecules which are centrosymmetric.}
+term symbol. $$\Delta S = 0 \quad \Delta \Lambda = 0 \pm 1$$
+$$ \ce{g} \not\rightarrow \ce{g} \quad \ce{u} \not\rightarrow \ce{u} \quad \ce{g} \rightarrow \ce{u}$$
+
+The spin selection rule $\Delta S = 0$ means \textbf{singlet-triplet transitions are forbidden}. If heavy atoms are
+\marginnote{In \ce{I2} the forbidden \ce{^3\Pi}--\ce{^1\Sigma} transition is responsible for the brown colour of iodine vapour.}present,
+the spin selection rule begins to break down due to spin-orbit coupling.
+%\begin{justification}
+%  Can add a justification here one day.
+%\end{justification}
+
+In general, \textbf{allowed electronic transitions must involve a change in symmetry}. \cite{atkins2014atkins}
 
 \section{The Frank-Condon Principle}
+
+\begin{definition}[Fermi's Golden Rule] Describes the rate of a photophysical event $k$.
+  \begin{equation}
+    k(\mathrm{s}^{-1}) = \frac{2\pi}{h} \mathrm{FC} \times \mathrm{V}^2
+  \end{equation}
+  where FC is the \textbf{Franck-Condon factor}: probability that nuclei are in a position where an electronic transition is possible.
+  V is the \textbf{electronic coupling}: rate of electronic transition. Both cases refer to isoenergetic transfer.
+
+
+\end{definition}
+
+\begin{definition}[Frank-Condon Principle]\marginnote{These electronic transitions can take place in different contexts: 1. change of electron orbital (electron transfer) or 2. absorption of photon (photochemistry)}
+  Because nuclear masses are so much larger than the mass of an electron, an electronic transition occurs
+  within a stationary framework. \textbf{The nuclear wavefunction remains unchanged during an electronic transition}.
+\end{definition}
+
+We can now use this principle to develop a framework to predict and explain the vibrational transitions.
 
 \begin{theorem}[The Variational Theorem] $E_{\mathrm{avg}} > E_0$ for any function $\psi$. \marginnote{This
   makes physical sense, because energy of the ground state is, by definition, the lowest possible energy.}
@@ -92,16 +112,200 @@ The Hamiltonian of \ce{H2+} is expressed as follows:
   
 \end{theorem}
 
-The variational method does two things for us. First, it gives us a way to compare two 
-different wavefunctions and to show which one is closer to the wavefunction of the ground state. 
+In that way, the vibrational wavefunction undergoes \textbf{least change} in an electronic transition, 
+which corresponds to the preservation of the dynamical state of the nuclei as required by the Franck–Condon Principle (Definition 2).
+
+Qualitatively, the transition occurs from the ground vibrational state of the lower electronic state to the vibrational state 
+that it most resembles in the upper electronic state.
+
+\subsection{Summary}
+
+\begin{enumerate}
+  \item Allowed electronic transitions must involve a symmetry change.
+  \item The transition dipole moment is a one-electron operator.
+  \item Allowed electronic transitions preserve spin.
+  \item Electronic transitions are always accompanied by vibrational transitions. [Franck-Condon Principle]
+\end{enumerate}
+
+\section{Fluorescence}
+
+\subsection*{Kinetics: differential and integral rate laws}
+
+\begin{equation}
+  \frac{\mathrm{d}[\ce{S}_1]}{\mathrm{d}t} = -(k_R +k_{IC} +k_{ISC}) [\ce{S}_1]
+\end{equation}
+
+\begin{equation}
+[\ce{S}_1]_t = [\ce{S}_1]_0 \exp[-(k_R + k_{IC} + k_{ISC})t]
+\end{equation}
+
+Hence, with a steady state approximation we have the following relation:
+\begin{equation}\label{eq:1}
+\mathbf{\Phi}_F = \frac{k_R}{k_R + k_{IC} + k_{ISC}} = \frac{k_R}{k_0} = \frac{\tau_0}{\tau_R}
+\end{equation}
+
+The sum of $(k_R + k_{IC} + k_{ISC})$, which is $1/\tau_0$, can be measured from the decay of fluorescence.
+Taking this with a measure of $\Phi_F$ enable us to use Equation \ref{eq:1} to find $k_R$.
+
+\section{Phosphorescence}
+
+Phosphorescence typically has a longer lifetime ($10^{-4} \mathrm{s}$) because singlet-triplet transitions are spin forbidden, so the spontaneous
+emission rate $k_P$ is slower than that for a singlet-singlet transition (fluorescence, $k_R$). The population of excited triplet states \ce{T}
+is built up by \textbf{intersystem crossing}.
+
+\subsection*{Intersystem Crossing (ISC)}
+Intersystem crossing is possible due to \textbf{spin-orbit coupling}: the coupling of electron spin
+with orbital angular momentum. This is encouraged by heavy atoms (Br, I) which give rise to strong spin-orbit coupling and fast ISC.\marginnote{$V_{SO}$ is proportional to the fourth power of nuclear charge.}
+
+ISC is also enhanced with a large Franck-Condon factor, which increases the probability of the singlet and triplet state having vibrational levels which are
+isoenergetic.
+\begin{itemize}
+  \item Large, flexible molecules (lots of dense vibrational modes)
+  \item Polar environments, through polar solvents and macromolecules
+  \item Small energy gap between $\ce{S1}$ and $\ce{T1}$ (less electronic energy lost to vibrational)
+\end{itemize}
+
+\subsection*{Triplet Formation Quantum Yield}
+
+A quantum yield for ISC can be defined in a similar way to that for fluorescence.
+
+$$\mathbf{\Phi}_T = \frac{k_{ISC}}{k_0}$$
+
+\subsection*{Internal Conversion (IC)}
+
+As the name suggests, internal \textit{conversion} refers to the isoenergetic conversion of electronic energy to vibrational energy
+between two electronic states of the \textit{same} multiplicity.
+
+IC between $\ce{S1}$ and $\ce{S0}$ involves very highly excited vibrational levels of $\ce{S0}$. After IC, vibrational relaxation would
+quickly take the molecule down to to lower vibrational levels of $\ce{S0}$.
+
+\textbf{IC is fast from higher electronic excited states} due to a smaller energy gap from $\ce{S2} \rightarrow \ce{S1}$ etc. Therefore, most
+molecules rapidly relax to $\ce{S1}$ through IC. 
+
+\section{Unimolecular Photochemistry}
+
+Reactions involving a single molecule, not requiring an additional collision provided by diffusion. For example,
+
+\begin{enumerate}
+  \item Ionisation: $\ce{A^*} \rightarrow \ce{A+} + \ce{e-}$
+  \item Unimolecular dissociation: $\ce{A^{*}} \rightarrow \ce{B} + \ce{C}$
+  \item Isomerisation: $\ce{A^*} \rightarrow \ce{A}'$
+\end{enumerate}
+
+\subsection*{Kinetics}
+Unimolecular photochemistry is apparent as an additional first order reaction pathway with a rate $k_{PC}$, which follows
+the first-order rate law $\nu_{\mathrm{uni}} = k_{PC}[\ce{A^*}]$. Therefore, the total rate constant $k$ is now a
+sum of both photophysical ($k_0$) and photochemical ($k_{PC}$) rates of decay.
+\begin{align*}
+  k &= k_R + k_{ISC} + k_{IC} +k_{PC} \\
+    &= k_0 + k_{PC}
+\end{align*}
+
+Unimolecular photochemistry can be observed as quenching of fluorescence, which results in a reduction of emission lifetime and quantum yield,
+as shown below.
+\begin{equation}
+  \tau_0' = \frac{1}{k_0 + k_{PC}} \qquad \phi_f' = \frac{k_R}{k_0 + k_{PC}}
+\end{equation}
+
+And this is how the fluorescence quantum yields are related in the presence and absence of photochemistry -- they are directly proportional to each other.
+$$\frac{\phi_F'}{\phi_F} = \frac{\tau_0'}{\tau_0}$$
+
+From the above relations, we can arrive at the \textbf{photochemical quantum yield} $\phi_{PC}$ and \textbf{photochemical rate constant} $k_{PC}$.
+
+\begin{align}
+  \phi_{PC} &= \frac{k_{PC}}{k_0 + k_{PC}} = 1 - \frac{\phi_F'}{\phi_F} \\
+  k_{PC} &= k_R \left( \frac{1}{\phi_F'} - \frac{1}{\phi_F}\right) = \frac{1}{\tau_o'}- \frac{1}{\tau_0}
+\end{align}
 
 \section{Bimolecular Photochemistry}
 
+Bimolecular reactions involving a collision between two molecules, resulting in electron or energy transfer. For example,
+
+\begin{enumerate}
+  \item Quenching: $\ce{^1A^*} + \ce{Q} \rightarrow \ce{A} + \ce{Q}$
+  \item Electron transfer: $\ce{^1A^*} + \ce{B} \rightarrow \ce{A+} + \ce{B-}$
+  \item Addition: $\ce{^1A^*} + \ce{B} \rightarrow \ce{AB}$
+\end{enumerate}
+
+In the following examples, we will largely look at \textbf{quenching} to exemplify bimolecular photochemistry.
+Different molecules show different quenching efficiencies: we know that species with unpaired electrons (\ce{O2}) and easily polarisable atoms 
+(e.g. I) are particularly good at quenching electronically excited states.
+
+\subsection*{Kinetics}
+
+The example reactions provided above all share a second-order rate law $\nu_{\mathrm{bi}} = k_{Q}[\ce{^1A^*}][\ce{Q}]$.
+\marginnote{Or it can be that $[\ce{Q}] \gg [\ce{^1A^*}]$ which results in pseudo first-order kinetics as well.}
+If we can assume the quencher is not consumed, $[\ce{Q}]$ remains constant, and the process is pseudo first-order with rate constant $k_Q[\ce{Q}]$. The
+pseudo first-order rate law is
 \begin{equation}
-  \frac{\phi_{F}}{\phi_{F}'} = \frac{\tau_0}{\tau} = \frac{k_0 + k_Q[Q]}{k_0}
+  [\ce{^1A^*}_1]_t = [\ce{^1A^*}_1]_0 \exp \{ -(k_R + k_{IC} + k_{ISC} + k_Q[\ce{Q}])t \}
 \end{equation}
 
-\section{Fluoresence Resonance Energy Transfer}
+From the definition of $\phi_F$, the quenched fluorescence quantum yield $\phi_F'$ is a function of $[\ce{Q}]$.
+
+\begin{equation}
+  \phi_F' = \frac{k_R}{k_0 + k_Q[\ce{Q}]}
+\end{equation}
+
+Thus, after some steady-state approximation,
+
+\begin{equation}
+  \frac{\phi_{F}}{\phi_{F}'} = \frac{\tau_0}{\tau_0'} = \frac{k_0 + k_Q[Q]}{k_0} = 1 + \frac{k_Q}{k_0}[\ce{Q}]
+\end{equation}
+
+The ratio $\phi_F / \phi_F'$ can be developed into a useful result, referred to as \textbf{Stern-Volmer Analysis}.
+
+\begin{align*}
+  \frac{\phi_F}{\phi_F'} &= \frac{k_R}{k_R + k_{IC} + k_{ISC}} \frac{k_R + k_{IC} + k_{ISC} + k_Q[\ce{Q}]}{k_R} \\
+  &= \frac{k_R}{k_0} \frac{k_0 + k_Q[\ce{Q}]}{k_R} \\
+  &= 1 + \frac{k_Q[\ce{Q}]}{k_0} \\
+  &= 1 + \tau_0 k_Q[\ce{Q}]
+\end{align*}
+
+A plot of $\phi_F/\phi_F'$ against [\ce{Q}] will give a straight line of slope $\tau_0 k_Q$.
+
+\section{Fluorescence Resonance Energy Transfer}
+
+If the emission spectrum of one molecule significantly overlaps with the absorption spectrum of another molecule,
+\marginnote{This process is mediated by a direct interaction (dipole-dipole coupling) between two molecules, and is not photon transfer.}and
+if both molecules are in \textit{close proximity}, there can be efficient \textbf{non-radiative energy transfer} from the first molecule
+(the donor) to the second (the acceptor). When the absorption and emission spectra overlap, there is a probability of isoenergetic energy 
+levels that exist betwen donor and acceptor
+(Franck-Condon Factor).
+
+The fluorescence resonance energy transfer efficiency is given by
+
+\begin{equation}
+  \phi_{\ce{FRET}} = \frac{k_{\ce{FRET}}}{k_{\ce{FRET}}+k_0} = \frac{R_0^6}{R_0^6+R_{DA}^6}
+\end{equation}
+
+where $R_{DA}$ is the distance between donor and acceptor and 
+$$k_{\ce{FRET}} = k_0 \left( \frac{R_0}{R_{DA}} \right)^6 \quad R_0= C\left( \frac{\kappa^2 \phi_D J}{n^4}\right)^{1/6}$$
+
+As we can see in the above relation, the efficiency of FRET is highly dependent on distance (tens of nm).
+
+\subsection*{Quenching of donor emission is evidence of FRET}
+
+We can typically observe FRET as quenching of donor emission, which can be unimolecular or bimolecular. 
+
+\begin{itemize}
+  \item Efficient FRET between a donor and acceptor results in quenching of donor emission and increase in acceptor emission.
+  \item Inefficient FRET between a donor and acceptor results in emission of both donor and acceptor being observed.
+\end{itemize}
+
+\subsection*{Summary}
+
+\begin{itemize}
+  \item FRET is non-radiative energy transfer between two molecules.
+  \item Adheres to the Fermi Golden Rule.
+  \item Efficient FRET requires \textbf{1.} good overlap between acceptor and donor energy levels (FC) \textbf{2.} good dipole-dipole coupling ($\ce{V^2}$) and \textbf{3.} close proximity (rate $\propto 1/R^6$).
+  \item Typical range of donor-acceptor separation is up to 10 nm.
+\end{itemize}
+
+
+\section{Electron Transfer}
+
+Basically reaction dynamics
 
 \bibliography{photochem}
 \bibliographystyle{plainnat}
