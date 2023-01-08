@@ -1,12 +1,37 @@
 
 \section{Molecular Quantum Mechanics}
 
+\textbf{Photon Energy ($E$)}. $E = hf$ where
+$h$ is Planck's constant and $f$ is the frequency of the electromagnetic
+radiation.
+\vspace{\baselineskip}
+
+\textbf{de Broglie Wavelength.} The wavelength of a particle is given by
+\begin{equation*} \lambda = \frac{h}{p} = \frac{h}{mv} \end{equation*} where $p$
+is the momentum of the object.
+\vspace{\baselineskip}
+
+\textbf{Heisenberg's Uncertainty Principle.} \begin{equation*} \Delta x \Delta p \geq \frac{\hslash}{2} =
+  \frac{h}{4\pi} \end{equation*} where $\hslash$ is the reduced Planck's constant.
+\vspace{\baselineskip}
+
+\textbf{Electronvolt} (eV). Useful unit of energy where $1 \textrm{ eV} = 1.60 \times 10^{-19} \textrm{ J}$.
+\vspace{\baselineskip}
+
+\textbf{Wavenumbers}. $\nu(\mathrm{cm}^{-1}) = 10^7 / \lambda (\mathrm{nm})$
+\vspace{\baselineskip}
+
 \subsection*{Schrödinger Equation}
-Time Independent Schrödinger Equation \\
+Time Independent Schrödinger Equation
 \begin{equation*}
     \hat{H}\psi = E\psi
 \end{equation*}
 
+\subsection*{Operators}
+Position operator: $\hat{x} = x$ \\
+Momentum operator: $\hat{p}_x = \hbar/i \cdot (\mathrm{d}/\mathrm{d}x)$ \\
+Hamiltonian operator: $\hat{H} = \hat{E}_k + \hat{V}$
+\vspace{\baselineskip}
 
 \subsection*{Wavefunctions}
 $\psi$ must satisfy the following conditions.
@@ -16,6 +41,14 @@ $\psi$ must satisfy the following conditions.
     \item Continuous everywhere
     \item Continuous first derivative
 \end{itemize}
+
+\subsection*{Free Translation in 1D}
+Schrödinger Equation:
+$$\frac{-\hbar^2}{2m} \frac{\mathrm{d}^2\psi(x)}{\mathrm{d}x^2} =  E \psi(x)$$
+
+Wavefunctions and energies:
+$$\psi(x) = A {\rm e}^{ikx} + B {\rm e}^{-ikx} \quad E_k = \frac{k^2\hbar^2}{2m}$$
+
 
 \subsection*{Particle in a Box}
 Hamiltonian:
@@ -29,6 +62,10 @@ $$\hat{H} = \frac{-\hbar^2}{2mr^2} \frac{\mathrm{d}^2}{\mathrm{d}\phi^2}$$
 Hamiltonian:
 $$\hat{H} = \frac{-\hbar^2}{2m} \frac{\mathrm{d}^2}{\mathrm{d}x^2} + \frac{1}{2}kx^2$$
 
+\subsection*{Hydrogen Atom}
+Electronic Hamiltonian of \ce{H}:
+$$\hat{H}_e = \frac{-\hbar^2}{2m_e}\nabla_e^2-\frac{e^2}{4\pi\epsilon_0} \left( \frac{1}{r_A} \right)$$
+
 \section{Many-Electron Systems}
 \subsection*{Born-Oppenhimer Approximation}
 
@@ -38,10 +75,23 @@ $$\hat{H} = \hat{T}_{n} + \hat{T}_{e} + \hat{V}_{ee} + \hat{V}_{en} + \hat{V}_{n
 Born-Oppenheimer Hamiltonian: $\hat{T} = 0$,
 $$\hat{H}_{\mathrm{BO}} = \left( \hat{T}_{e} + \hat{V}_{ee} + \hat{V}_{en} \right) + \hat{V}_{nn}$$
 
+\subsection*{Hydrogen Ion \ce{H2+}}
+
 Electronic Hamiltonian of \ce{H2+}
 \begin{equation*}
     \hat{H}_e = \frac{-\hbar^2}{2m_e}\nabla^2_e + \frac{e^2}{4\pi\epsilon_0} \left( \frac{1}{R_{AB}} - \frac{1}{r_{A}} - \frac{1}{r_{B}} \right)
 \end{equation*}
+
+A \textbf{basis set} is the set of atomic orbitals from which molecular orbitals are constructed.
+
+Molecular Orbitals of \ce{H2+}
 \begin{equation*}
-    \hat{H}_e = \frac{-\hbar^2}{2m_e}\nabla^2_e + \frac{e^2}{4\pi\epsilon_0} \left( \frac{1}{R_{AB}} - \frac{1}{r_{A}} - \frac{1}{r_{B}} \right)
-\end{equation*}
+    \psi(\ce{H2+}) = c_A[1\ce{s_}_A (\mathbf{r}_A) \pm 1\ce{s_}_B (\mathbf{r}_B)]
+  \end{equation*}
+$1\ce{s_}_A (\mathbf{r}_A) + 1\ce{s_}_B (\mathbf{r}_B) \rightarrow$ constructive \\
+$1\ce{s_}_A (\mathbf{r}_A) - 1\ce{s_}_B (\mathbf{r}_B) \rightarrow$ destructive \\
+
+Energies of \ce{H2+} Molecular Orbitals
+
+
+The \textbf{variational principle} provides a criterion for optimizing a trial wavefunction.

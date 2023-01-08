@@ -1,28 +1,66 @@
 \section{Photophysics}
+\textbf{Franck-Condon Principle}. $\because$ nuclei are much more massive than electrons,
+an electronic transition (electron transfer, absorption) takes place much faster than the nuclei can respond.
 \subsection*{Fermi's Golden Rule}
 $$k(\mathrm{s}^{-1}) = \frac{2\pi}{h}|S(f,i)|^2V^2$$
 
-\textbf{Frank-Condon Factor}: The square of the electric dipole transition moment.
+\textbf{Frank-Condon Factor}: The square of the overlap integral between the \textit{vibrational} wavefunctions.
 $$|S(f,i)|^2 = \left( \int^{\infty}_{-\infty}\phi_i\phi_f \mathrm{d}x \right)^2$$
-\subsection*{Light Absorption}
-Beer Lambert Law: $A = \epsilon cl$
 
-Oscillator Strength: oh dear god
+\subsection*{Light Absorption}
+\textbf{Absorbance}: $$ A = -\log \frac{I}{I_0}$$ \\
+$I$ is the intensity of transmitted light, and $I_0$ is the intensity of incident light
+
+\vspace{\baselineskip}
+
+\textbf{Beer Lambert Law}: $A = \epsilon cl$
+\vspace{\baselineskip}
+
+\textbf{Oscillator Strength} ($f$) is the empirical `probability' of absorption / emission of photon in electronic transitions.
+\begin{equation*}
+  f = 4 \times 10^{-9} \int_{\nu_1}^{\nu_2}\epsilon \mathrm{d}\nu \approx 4 \times 10^{-9} \epsilon_{\mathrm{max}} \Delta \nu_{1/2}
+\end{equation*}
+
+$f = 1$ is the `fully allowed' transition.
+
+$\Delta \nu_{1/2}$ is the full-width at half maximum of the peak, converted to wavenumbers.
+\vspace{\baselineskip}
+
+\textbf{Transition Dipole}
+\begin{equation*}
+  \mathbf{\mu}_{fi} = -\mathrm{e} \int_{-\infty}^{\infty}\psi^{*}_{f} x \psi_{i} \mathrm{d}x
+\end{equation*}
+
+Transition dipole is related to oscillator strength: $|\nu_{fi}|^2 \propto f$
+\vspace{\baselineskip}
+
+\textbf{Selection Rules} 1. spin 2. symmetry \\
+$\because$ conservation of angular momentum, $\Delta S =0 \therefore \mathrm{S_0} \not\rightarrow \mathrm{T_1} \wedge \mathrm{S_0} \not\rightarrow \mathrm{T_1}$
+
+For centrosymmetric molecules, only $u \rightarrow g$ and  $g \rightarrow u$ transitions are allowed.
 
 \subsection*{Light Emission}
+
+Absorption:\\ $\ce{S} + h\nu_i \rightarrow \ce{S}^{*}\quad \nu_{\mathrm{abs}} = I_{\mathrm{abs}}$\\
+Fluorescence:\\ $\ce{S}^{*} \rightarrow \ce{S} + h\nu_f \quad \nu_{\mathrm{F}} = k_{\mathrm{F}} [\ce{S}^{*}]$ \\
+Internal conversion:\\ $\ce{S}^{*} \rightarrow \ce{S} \quad \nu_{\mathrm{IC}} = k_{\mathrm{IC}}[\ce{S}^{*}]$ \\
+Intersystem crossing:\\ $\ce{S}^{*} \rightarrow \ce{T} \quad \nu_{\mathrm{ISC}} = k_{\mathrm{ISC}}[\ce{S}^{*}]$ \\
+
+
 Quantum Yield:
 $$\mathbf{\Phi}_F = \frac{k_R}{k_R + k_{IC} + k_{ISC}} = \frac{k_R}{k_0} = \frac{\tau_0}{\tau_R}$$
 
 \section{Unimolecular Photochemistry}
+
+
 \section{Bimolecular Photochemistry}
-Fermi's Golden Rule
+WHAT IS THIS?
 \begin{equation*}
   \frac{\phi_{F}}{\phi_{F}'} = \frac{\tau_0}{\tau} = \frac{k_0 + k_Q[Q]}{k_0}
 \end{equation*}
 \section{Förster Resonance Energy Transfer}
 A donor chromophore, initially in its electronic excited state, may transfer energy to an acceptor chromophore 
-through non-radiative dipole-dipole coupling. \\
-
+through non-radiative dipole-dipole coupling.
 Dipole-dipole coupling:
 $$E = \frac{1}{1 + (r/R_0)^6}$$
 

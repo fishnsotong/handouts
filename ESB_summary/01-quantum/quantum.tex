@@ -11,8 +11,8 @@
 \usepackage{graphicx} % allow embedded images
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{graphics/}} % set of paths to search for images
-  \usepackage{amsmath,amsthm,mathrsfs}  % extended mathematics
-  \usepackage[version=4]{mhchem}        % extended chemistry
+  \usepackage{amsmath,amsthm,mathrsfs,braket}  % extended mathematics
+  \usepackage[version=4]{mhchem}               % extended chemistry
 \usepackage{xcolor}   % colors (like highlighting)
 \usepackage{booktabs} % book-quality tables
 \usepackage{units}    % non-stacked fractions and better unit spacing
@@ -170,7 +170,7 @@ Here, we see that the \textbf{Born-Oppenheimer approximation} helps us to 1. sim
 
 \section{Molecular Orbital Approximation}
 
-At this point, we have nearly completed our introduction to quantum mechanics 
+NEED TO ADD STUFF THAT MAKES SENSE HERE. At this point, we have nearly completed our introduction to quantum mechanics 
 and we can investigate the electronic structure of molecules.
 
 The Hamiltonian of \ce{H2+} is expressed as follows:
@@ -178,6 +178,11 @@ The Hamiltonian of \ce{H2+} is expressed as follows:
 \begin{equation}
   \hat{H} = -\frac{1}{2}\nabla^2_r - \frac{\nabla^2_A}{2M_A}
 \end{equation}
+
+\section{Linear Combinations of Atomic Orbitals (LCAO)}
+Here we apply \textbf{series approximations} in quantum chemistry. We use
+known atomic orbitals as our \textbf{basis set} to construct molecular orbitals,
+by working out molecular orbital coefficients.
 
 \subsection{The molecular orbitals of \ce{H2+}}
 
@@ -189,13 +194,12 @@ in its ground state, we require the $1\ce{s}$ orbital from each \ce{H} atom.
 \end{equation}
 
 \textbf{A note on orbital coefficients.} The orbital coefficients $c$ provide us information
-about electron density in a molecule. \textit{In this case,} \ce{H2+} is centrosymmetric. 
-The electron is equally likely to be found aroun each nucleus A and B. Therefore, $c_A^2 = c_B^2 \rightarrow c_A = \pm c_B$.
-$|c_A| > |c_B|$ would imply more electron density close
+about electron density in a molecule. For example, $|c_A| > |c_B|$ would imply more electron density close
 to $A$ than $B$.
 
 \begin{example}[Molecular Orbitals of \ce{H2+}]
-
+  \ce{H2+} is centrosymmetric. The electron is equally likely to be found around each nucleus $A$ and $B$. 
+  Therefore, $c_A^2 = c_B^2 \rightarrow c_A = \pm c_B$.
   \begin{equation}
     \psi(\ce{H2+}) = c_A[1\ce{s_}_A (\mathbf{r}_A) \pm 1\ce{s_}_B (\mathbf{r}_B)]
   \end{equation}
@@ -206,6 +210,24 @@ to $A$ than $B$.
 \end{itemize}
 
 \end{example}
+
+\subsection{Calculating the energy of a wavefunction}
+
+\begin{definition}[Energy of a wavefunction]
+\begin{equation}
+  E = \frac{\braket{\psi{|\hat{H}|\psi}}}{\braket{\psi|\psi}}
+\end{equation}
+Which is even simpler if $\psi$ is normalised, $E = \braket{\psi{|\hat{H}|\psi}}$.
+\end{definition}
+
+This energy expression works for approximate wavefunctions as well as exact ones. With a 
+basis set of known atomic functions as a starting point, solving for a many-electron wavefunction
+\marginnote{We do this because we can't write down the wavefunction for a molecule: instead we use a linear expansion.}now becomes 
+solving for \textbf{molecular orbital coefficients} -- which tell us how much each atomic
+wavefunction contributes to each molecular orbital.
+For more information on Dirac notation, see Appendix B.
+
+\section{Determining MO Coefficients}
 
 \section{The Variational Principle}
 
