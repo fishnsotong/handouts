@@ -1,6 +1,6 @@
 \section{Photophysics}
 \textbf{Franck-Condon Principle}. $\because$ nuclei are much more massive than electrons,
-an electronic transition (electron transfer, absorption) takes place much faster than the nuclei can respond.
+an electronic transition (electron transfer, absorption) occurs within a stationary framework.
 
 \subsection*{Fermi's Golden Rule}
 $$k(\mathrm{s}^{-1}) = \frac{2\pi}{h}\ce{FC} \times \mathrm{V}^2$$
@@ -92,8 +92,12 @@ Unimolecular: $\ce{S^*} \rightarrow \ce{P} \quad \nu_{\mathrm{uni}} = k_{\mathrm
 Ionisation: $\ce{A^*} \rightarrow \ce{A+} + \ce{e-}$ \\
 Unimolecular dissociation: $\ce{A^{*}} \rightarrow \ce{B} + \ce{C}$ \\
 Isomerisation: $\ce{A^*} \rightarrow \ce{A}'$ \\
+\columnbreak
 
-$\phi_F$ and $\tau_0$ are quenched: photochemistry is an additional first-order process.
+Photochemical proccesses are additional competing first-order process for excited state decay.
+\vspace{\baselineskip}
+
+$\phi_F$ and $\tau_0$ are quenched: 
 $$\tau_0' = \frac{1}{k_0 + k_{PC}} \qquad \phi_f' = \frac{k_R}{k_0 + k_{PC}}$$
 
 Photochemical Quantum Yield:
@@ -121,6 +125,8 @@ Stern-Volmer Analysis:
 $$\frac{\phi_F}{\phi_F'} = 1 + \tau_0 k_Q[\ce{Q}]$$
 
 A plot of $\phi_F/\phi_F'$ against [\ce{Q}] will give a straight line of slope $\tau_0 k_Q$.
+\vspace{\baselineskip}
+
 \section{Förster Resonance Energy Transfer}
 1. Significant overlap of the absorption / emission spectrum of two molecules. \\
 2. Both molecules are in close proximity. \\
@@ -130,9 +136,38 @@ FRET is efficient \textbf{non-radiative energy transfer} from the donor to the a
 FRET energy transfer efficiency:
 $$\phi_{\ce{FRET}} = \frac{k_{\ce{FRET}}}{k_{\ce{FRET}}+k_0} = \frac{R_0^6}{R_0^6+R_{DA}^6}$$
 
-where $R_{DA}$ is the distance between donor and acceptor, and 
+where $R_{DA}$ is the distance between donor and acceptor, 
+\columnbreak
 $$k_{\ce{FRET}} = k_0 \left( \frac{R_0}{R_{DA}} \right)^6$$
 
-FRET is extremely sensitive to small changes in distance.
+and $R_0$ is defined such that $R_{DA} = R_0$, $k_{FRET} = k_0.$ The rate of FRET is equal that of other photophysical processes, energy transfer efficiency $\phi_{FRET} = 0.5$
+\vspace{\baselineskip}
+
+FRET is extremely sensitive to small changes in distance ($1/R^6$).
+\vspace{\baselineskip}
 
 \section{Electron Transfer}
+
+\subsection*{Distance dependence}
+$$k_{ET} \propto \ce{V^2} \propto \exp(-\beta r)$$
+
+where r is the distance, and $\beta$ depends on the property of the medium between donor and acceptor.
+
+\subsection*{Energy dependence}
+$$k_{ET} \propto \ce{FC} \propto \exp \left( \frac{\Delta G^{\ddag}}{k_B T} \right)$$
+
+which can be expressed as
+
+$$\exp \left( \frac{(\Delta G^{0} + \lambda)^2}{4 \lambda k_B T} \right)$$
+
+where $\lambda$ is the reorganization energy. The optimal rate of electron transfer is when $\Delta G$ = $\lambda$.
+\vspace{\baselineskip}
+
+\subsection*{Summary}
+\textbf{Distance dependent} to maximise the spatial orbital overlap.
+
+\textbf{Energy dependent} $\because$ isoenergetic condition of quantum tunnelling.
+\vspace{\baselineskip}
+
+\textbf{Transient absorption spectroscopy} is measuring the change in absorption of excited states of molecules with respect to the ground state.
+\vspace{\baselineskip}

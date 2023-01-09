@@ -170,19 +170,17 @@ Here, we see that the \textbf{Born-Oppenheimer approximation} helps us to 1. sim
 
 \section{Molecular Orbital Approximation}
 
-NEED TO ADD STUFF THAT MAKES SENSE HERE. At this point, we have nearly completed our introduction to quantum mechanics 
-and we can investigate the electronic structure of molecules.
+A many-electron wavefunction can be approximated as the \textbf{product} of single-electron wavefunctions. This is know as the
+molecular orbital approximation (Definition 2).
 
-The Hamiltonian of \ce{H2+} is expressed as follows:
-
-\begin{equation}
-  \hat{H} = -\frac{1}{2}\nabla^2_r - \frac{\nabla^2_A}{2M_A}
-\end{equation}
+An orbital is the wavefunction of an electron moving under the influence of a fixed nuclear potential, and the average repulsive potential
+of the other electrons. We do this because the \textit{electron-electron repulsion} term means we cannot exactly solve the Schrödinger equation
+for a many-electron system.
 
 \section{Linear Combinations of Atomic Orbitals (LCAO)}
 Here we apply \textbf{series approximations} in quantum chemistry. We use
 known atomic orbitals as our \textbf{basis set} to construct molecular orbitals,
-by working out molecular orbital coefficients.
+by working out molecular orbital coefficients (Definition 3).
 
 \subsection{The molecular orbitals of \ce{H2+}}
 
@@ -217,10 +215,10 @@ to $A$ than $B$.
 \begin{equation}
   E = \frac{\braket{\psi{|\hat{H}|\psi}}}{\braket{\psi|\psi}}
 \end{equation}
-Which is even simpler if $\psi$ is normalised, $E = \braket{\psi{|\hat{H}|\psi}}$.
+Which is even simpler if $\psi$ is normalised, $E = \braket{\psi{|\hat{H}|\psi}}$.\marginnote{When normalised, $\braket{\psi|\psi} = 1$, which is $\int \psi^* \psi \mathrm{d}\tau = 1$ (Born interpretation).}
 \end{definition}
 
-This energy expression works for approximate wavefunctions as well as exact ones. With a 
+This energy expression works for approximate wavefunctions as well as exact ones. With a
 basis set of known atomic functions as a starting point, solving for a many-electron wavefunction
 \marginnote{We do this because we can't write down the wavefunction for a molecule: instead we use a linear expansion.}now becomes 
 solving for \textbf{molecular orbital coefficients} -- which tell us how much each atomic
@@ -228,6 +226,13 @@ wavefunction contributes to each molecular orbital.
 For more information on Dirac notation, see Appendix B.
 
 \section{Determining MO Coefficients}
+
+The coefficients of the \ce{H2+} molecular orbital can therefore be determined by \textbf{normalization}, as we have established
+in the previous section. For the justification, see Lecture 4. \marginnote{By definition, $S_{AB} = S_{BA}$.}
+
+\begin{equation}
+  c_A = \frac{1}{\sqrt{2 (1 \pm S_{AB})}}
+\end{equation}
 
 \section{The Variational Principle}
 

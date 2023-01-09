@@ -12,7 +12,7 @@
   \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
   \graphicspath{{graphics/}} % set of paths to search for images
 \usepackage{amsmath,amsthm}  % extended mathematics
-\usepackage{physics}
+\usepackage{physics,siunitx}
 \usepackage[version=4]{mhchem}
 \usepackage{booktabs} % book-quality tables
 \usepackage{units}    % non-stacked fractions and better unit spacing
@@ -87,8 +87,9 @@ In general, \textbf{allowed electronic transitions must involve a change in symm
   \begin{equation}
     k(\mathrm{s}^{-1}) = \frac{2\pi}{h} \mathrm{FC} \times \mathrm{V}^2
   \end{equation}
-  where FC is the \textbf{Franck-Condon factor}: probability that nuclei are in a position where an electronic transition is possible.
-  V is the \textbf{electronic coupling}: rate of electronic transition. Both cases refer to isoenergetic transfer.
+  where FC is the \textbf{Franck-Condon factor}: probability that nuclei are in a position where an \textit{isoenergetic} electronic transition is possible.
+  \marginnote{Isoenergetic states are important, that is where electron transfer can occur due to quantum tunnelling}
+  The \ce{V^2} term is \textbf{electronic coupling}: rate of electronic transition.
 
 
 \end{definition}
@@ -100,23 +101,73 @@ In general, \textbf{allowed electronic transitions must involve a change in symm
 
 We can now use this principle to develop a framework to predict and explain the vibrational transitions.
 
-\begin{theorem}[The Variational Theorem] $E_{\mathrm{avg}} > E_0$ for any function $\psi$. \marginnote{This
-  makes physical sense, because energy of the ground state is, by definition, the lowest possible energy.}
+\begin{theorem}[Franck-Condon Principle] The intensity of a particular vibrational transition depends on the Franck–Condon factor.
 
-  \begin{proof}
-    Expand $\psi$ as a linear combination of unknown eigenstates $\phi_n$ of the Hamiltonian:
+  \begin{justification}
+    The intensity of a transition between electronic states $i$ and $j$ depends on the population of the lower state $i$ (Boltzmann)
+    and the square of the transition dipole moment $\boldsymbol{\mu}_{ji}$.
+
     \begin{equation*}
-      \psi = \sum_n a_n \phi_n
+      \boldsymbol{\mu}_{ji} = \int \psi_i^* \hat{\mu} \psi_j \mathrm{d} \tau
     \end{equation*}
-  \end{proof}
+
+    In this integral, $\hat{\mu}$ is the dipole moment operator, representing the interaction between the light
+    and the molecule.
+
+    Using the Born-Oppenheimer approximation, the wavefunctions can be written as a product of a wavefunction 
+    which depends only on the electrons $\psi_{\mathrm{el}}$ and a wavefunction which depends only on the \marginnote{convenient separation of variables}
+    vibrational motion of the nuclei $\psi_{\mathrm{vib}}$.
+
+    \begin{equation*}
+      \boldsymbol{\mu}_{ji} = \int \psi_{\mathrm{el}}'^* \psi_{\mathrm{vib},i} \hat{\mu} \psi_{\mathrm{el}}'' \psi_{\mathrm{vib,}j} \mathrm{d} \tau
+    \end{equation*}
+    In this expression we have used ' and '' to denote the initial and final electronic states, and have used i and j to indicate vibrational 
+    levels in the two electronic states. The vibrational wavefunctions are real, so the $^*$ has been dropped.
+
+    For an electronic transition we can assume that the relevant part of the dipole moment operator does not affect the vibrational wavefunctions, and
+    integral can be separated into two parts (relying on the Franck-Condon Principle).
+
+    \begin{equation*}
+      \boldsymbol{\mu}_{ji} = \left[ \int\psi_{\mathrm{vib},i} \psi_{\mathrm{vib,}j}\mathrm{d}r  \right] \times  \left[\int \psi_{\mathrm{el}}'^* \hat{\mu} \psi_{\mathrm{el}}'' \mathrm{d}\tau \right] 
+    \end{equation*}
+    For the vibrational term, the integration is over the internuclear separation $r$.
+    
+    The quantity in the right-hand square brace is the electronic \marginnote{$\hat{\mu}$ is antisymmetric, which affects the symmetry of allowed electronic transitions.}
+    transition moment, whose value is determined by the electronic states. If the transition is forbidden, this integral will be zero.
+
+    \begin{definition}[Franck-Condon factor]
+      \begin{equation*}
+        q_{i,j} = \left[ \int\psi_{\mathrm{vib},i} \psi_{\mathrm{vib,}j}\mathrm{d}r  \right]^2
+      \end{equation*}
+      
+    \end{definition}
+
+    The quantity in the left-hand square brace is simply the \textit{overlap integral} between the vibrational wavefunctions. The square of this quantity is known 
+    as the Franck-Condon factor, and it is important in determining the intensity of transitions between different vibrational energy levels.
+
+   
+
+  \end{justification}
+
+  The Franck-Condon factor will be largest when there is good overlap between two vibrational wavefunctions, which in practice means that the principal maxima
+  of the wavefunctions should be aligned.
   
 \end{theorem}
 
-In that way, the vibrational wavefunction undergoes \textbf{least change} in an electronic transition, 
-which corresponds to the preservation of the dynamical state of the nuclei as required by the Franck–Condon Principle (Definition 2).
-
 Qualitatively, the transition occurs from the ground vibrational state of the lower electronic state to the vibrational state 
-that it most resembles in the upper electronic state.
+that it most resembles in the upper electronic state. In that way, the vibrational wavefunction undergoes \textbf{least change} in an electronic transition, 
+which corresponds to the preservation of the dynamical state of the nuclei as required by the Franck-Condon Principle (Definition 2).
+
+\begin{marginfigure}
+  \includegraphics[width=55mm]{fcprinciple.png}
+  \caption{PE curves for absorption. (a) the two PE curves are aligned, so the strongest transition in the absorption spectrum will be $0 \rightarrow 0$. (b)
+  the upper state is displaced to the right, now the $0 \rightarrow 0$ but the later members of the vibronic progression ($0 \rightarrow 1$, $0 \rightarrow 2$) will have significant intensity.} 
+\end{marginfigure}
+
+If the equilibrium geometry of \ce{S1} is similar to the equilibrium geometry of \ce{S0}, there is only a small displacement in potential
+energy surfaces and the $0 \rightarrow 0$ transition is strongest.
+
+
 
 \subsection{Summary}
 
@@ -220,6 +271,7 @@ From the above relations, we can arrive at the \textbf{photochemical quantum yie
 \section{Bimolecular Photochemistry}
 
 Bimolecular reactions involving a collision between two molecules, resulting in electron or energy transfer. For example,
+\marginnote{Bimolecular photochemistry typically involves triplet states due to longer excited state lifetimes.}
 
 \begin{enumerate}
   \item Quenching: $\ce{^1A^*} + \ce{Q} \rightarrow \ce{A} + \ce{Q}$
@@ -262,7 +314,12 @@ The ratio $\phi_F / \phi_F'$ can be developed into a useful result, referred to 
   &= 1 + \tau_0 k_Q[\ce{Q}]
 \end{align*}
 
-A plot of $\phi_F/\phi_F'$ against [\ce{Q}] will give a straight line of slope $\tau_0 k_Q$.
+\begin{marginfigure}
+  \includegraphics[width=48mm]{stern_volmer.png}
+  \caption{Stern-Volmer plot} 
+\end{marginfigure}
+
+A Stern-Volmer  plot of $\phi_F/\phi_F'$ against [\ce{Q}] will give a straight line of slope $\tau_0 k_Q$.
 
 \section{Fluorescence Resonance Energy Transfer}
 
@@ -273,13 +330,18 @@ if both molecules are in \textit{close proximity}, there can be efficient \textb
 levels that exist betwen donor and acceptor
 (Franck-Condon Factor).
 
+\begin{equation}
+  \ce{FC} \propto J = \int I_{S*} \epsilon_Q \mathrm{d} v
+\end{equation}
+where the normalised overlap integral J is determined by the overlap of donor emission ($I_{S*}$) and acceptor absorption ($\epsilon_Q$) spectra.
+
 The fluorescence resonance energy transfer efficiency is given by
 
 \begin{equation}
   \phi_{\ce{FRET}} = \frac{k_{\ce{FRET}}}{k_{\ce{FRET}}+k_0} = \frac{R_0^6}{R_0^6+R_{DA}^6}
 \end{equation}
 
-where $R_{DA}$ is the distance between donor and acceptor and 
+where $R_{DA}$ is the distance between donor and acceptor and \marginnote{$R_0$ is defined such that $R_{DA} = R_0$, $k_{FRET} = k_0.$ The rate of FRET is equal that of other photophysical processes, energy transfer efficiency $\phi_{FRET} = 0.5$.}
 $$k_{\ce{FRET}} = k_0 \left( \frac{R_0}{R_{DA}} \right)^6 \quad R_0= C\left( \frac{\kappa^2 \phi_D J}{n^4}\right)^{1/6}$$
 
 As we can see in the above relation, the efficiency of FRET is highly dependent on distance (tens of nm).
@@ -305,7 +367,45 @@ We can typically observe FRET as quenching of donor emission, which can be unimo
 
 \section{Electron Transfer}
 
-Basically reaction dynamics
+The rate of electron transfer $k_{ET}$ has a strong distance and medium dependence.\marginnote{This is due to the V factor, which represents electronic interaction based on spatial overlap of donor
+and acceptor wavefunctions.}
+\begin{equation}
+  k_{ET} \propto \ce{V^2} \propto \exp(-\beta r)
+\end{equation}
+where r is the distance, and $\beta$ depends on the property of the medium between donor and acceptor.
+
+\begin{itemize}
+  \item $\beta = 0$ \si{\angstrom}$^{-1}$ are delocalised systems, which provide pathways for very efficient electron transport.
+  \item $\beta = 0.7$ \si{\angstrom}$^{-1}$ are systems linked via rigid covalent bonds (molecular wires) which can transport electrons with a chain rich in electrophilic nuclei.
+  \item $\beta = 1.4 - 2.8$ \si{\angstrom}$^{-1}$ Solvent and vacuum aren't that great for electron transfer.
+\end{itemize}
+
+Because electron transfer through quantum tunnelling must be isoenergetic, thermal excitation is required\marginnote{FC factor, which gives rise to energy dependence of electron transfer.}
+to reach the crossing point. This is the \textbf{activation barrier}.
+
+\begin{figure}
+  \includegraphics[width=100mm]{ET_pes.png}
+  \caption{Gibbs energy surfaces of \ce{DA} amd \ce{D+A-} involved in a typical electron transfer process represented as simple harmonic oscillators.
+  $q_0^R$ and $q_0^P$ are equilibrium structures of reactant and product.} 
+\end{figure}
+
+\marginnote{$\lambda$ is the reorganization energy, the energy change associated with the molecular rearrangement for DA to take the equilibrium geometry of \ce{D+A-}.}
+\begin{equation}
+  k_{ET} \propto \ce{FC^2} \propto \exp \left( \frac{\Delta G^{\ddag}}{k_B T} \right) = \exp \left( \frac{(\Delta G^{0} + \lambda)^2}{4 \lambda k_B T} \right)
+\end{equation}
+
+
+In unimolecular donor-acceptor systems, the above relation can be used in conjunction with
+\begin{equation*}
+  k_{PC} = k_R \left( \frac{1}{\phi_F'} - \frac{1}{\phi_F}\right) = \frac{1}{\tau_o'}- \frac{1}{\tau_0}
+\end{equation*}
+
+\subsection*{Summary}
+
+\begin{itemize}
+  \item Electron transfer is distance dependent to maximise the spatial orbital overlap.
+  \item Electron transfer is energy dependent due to the isoenergetic condition of quantum tunnelling.
+\end{itemize}
 
 \bibliography{photochem}
 \bibliographystyle{plainnat}
