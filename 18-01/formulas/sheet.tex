@@ -1,0 +1,67 @@
+% Reference: https://tex.stackexchange.com/questions/8827/preparing-cheat-sheets/8915
+
+% Package imports.
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes,positioning,arrows,fit,calc,graphs,graphs.standard}
+\usepackage[nosf]{kpfonts}
+\usepackage[t1]{sourcesanspro}
+\usepackage{multicol}
+\usepackage[top=0mm,bottom=1mm,left=0mm,right=1mm]{geometry} % page margins 
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{microtype}
+\usepackage{pdfpages}
+
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}  % extended mathematics
+\usepackage[version=4]{mhchem} % extended chemistry
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage{lipsum}
+
+
+% Turns off header and footer.
+%\pagestyle{empty}
+
+% Redefine section commands to use less space and have smaller text.
+% (Can change font size if `\tiny` is too small.
+% See http://www.sascha-frank.com/latex-font-size.html as a reference.)
+% \makeatletter
+
+
+
+%\let\bar\overline
+
+
+\begin{document}
+\include{contents/def}
+
+% Don't start new paragraphs if you don't need to.
+%\raggedright
+% font size
+\small
+
+% Specifying number of columns.
+% Asterisk "*" here to force the left-most column to fill first, then the next, ect.
+% (Otherwise, all columns would fill down "equally".
+\begin{multicols*}{5}
+
+% Can play around with these as desired.
+\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{0.25pt}
+\setlength{\postmulticols}{0.25pt}
+\setlength{\multicolsep}{0.25pt}
+\setlength{\columnsep}{0.25pt}
+
+% \header
+
+\input{contents/differentiation}
+\input{contents/photochem}
+\input{contents/mo_theory}
+
+
+\end{multicols*}
+
+\end{document}
