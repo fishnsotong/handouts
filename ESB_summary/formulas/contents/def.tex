@@ -30,7 +30,7 @@ leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
 \begin{mdframed}[style=header]
 \footnotesize
 \sffamily
-Electronic States and Bonding \\
+18.01 Single-Variable Calculus \\
 Wayne~Yeo~Wei~Zhong,~Page~\thepage~of~2
 \end{mdframed}
 }
@@ -38,18 +38,12 @@ Wayne~Yeo~Wei~Zhong,~Page~\thepage~of~2
 \makeatletter % Author: https://tex.stackexchange.com/questions/218587/how-to-set-one-header-for-each-page-using-multicols
 \renewcommand{\section}{\@startsection{section}{1}{0mm}%
                                 {.2ex}%
-                                {.5ex}%x
+                                {.2ex}%x
                                 {\color{myblue}\sffamily\small\bfseries}}
 \renewcommand{\subsection}{\@startsection{subsection}{1}{0mm}%
                                 {.2ex}%
-                                {.5ex}%x
+                                {.2ex}%x
                                 {\sffamily\bfseries}}
-
-
-\global\mdfdefinestyle{header}{%
-linecolor=gray,linewidth=1pt,%
-leftmargin=0mm,rightmargin=0mm,skipbelow=0mm,skipabove=0mm,
-}
 
 % HOLY SHIT IT'S WORKING
 % https://tex.stackexchange.com/questions/654847/how-to-set-one-header-for-each-page-using-multicols-in-2022?noredirect=1&lq=1
