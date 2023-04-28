@@ -1,0 +1,81 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{34. Electronic Spectroscopy \& Photochemistry\thanks{Wayne~W.~Z. Yeo}}
+
+\author[MIT 18.02]{\textnormal{MIT 18.02} Multivariable Calculus\thanks{Course Instructors: Robert Field}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+  
+  \usepackage{graphicx}
+  \usepackage{array,cellspace,multirow}
+  \setlength\cellspacetoplimit{5pt}
+  \setlength\cellspacebottomlimit{5pt}
+  \newcommand\mc[3]{\hfill #1\par          % cell's content at top right
+                         (#2)\par          % cell's content on the midle
+                           #3\hfill\mbox{}}% cell's content at bottom left
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\setlength\fboxsep{7px}
+
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+Vector operations, partial derivatives. Differential operators (div, grad, curl, laplacian). Line integrals, potential fields and Green's Theorem. Surface integrals and Stokes' Theorem. Volume integrals and the Divergence Theorem.
+
+\end{abstract}
+
+\begin{tabular}{cc | *{2}{>{\centering\arraybackslash}S{m{12mm}}|}}
+  \multicolumn{2}{c}{}    &   \multicolumn{2}{c}{Player 1}    \\
+  \multicolumn{2}{c}{}    &   \multicolumn{1}{c}{A}
+                          &   \multicolumn{1}{c}{B}           \\
+      \cline{3-4}
+  \multirow{4}{*}{\rotatebox[origin = c]{90}{Player 2}}
+      &   A   &   \mc{4}{3}{1}    &   \mc{5}{1}{2}            \\
+      \cline{3-4}
+      &   B   &   \mc{6}{5}{1}    &   \mc{2}{3}{2}            \\
+      \cline{3-4}
+  \end{tabular}
+
+\bibliography{summary}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
