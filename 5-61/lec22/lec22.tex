@@ -1,0 +1,111 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{22. The Helium Atom\thanks{Wayne~W.~Z. Yeo}}
+
+\author[MIT 5.61]{\textnormal{MIT 5.61} Physical Chemistry\thanks{Course Instructors: Robert Field, with lecture notes from Troy van Voorhis}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\setlength\fboxsep{7px}
+
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+Dealing with multi-electron systems require more approximations, including the \textbf{Born-Oppenheimer approximation}.
+
+\end{abstract}
+
+Now that we have treated hydrogen-like atoms in some detail,
+
+It turns out to be fairly difficult to transform to the centre of mass when dealing with three particles.
+
+
+\section{Non-Interacting Electron Approximation}
+
+For He, the first thing we notice is that the Hamiltonian becomes seperable if we neglect the
+electron-electron repulsion term:
+
+\section{Independent Electron Approximation}
+
+\begin{theorem}[Spin-Statistics Theorem] Integer-spin particles are bosons, while half-integer-spin particles are fermions.
+  \marginnote{The fields of integral spins commute (and therefore must be quantised as bosons) while the fields of
+  half-integral spins anticommute (and therefore must be quantised as fermions).} 
+  \begin{enumerate}
+    \item Any wavefunction that describes multiple identical fermions must be antisymmetric upon exchange of the electrons.
+    \item Any wavefunction that describes multiple identical bosons must be symmetric upon exchange of the particles
+  \end{enumerate}
+   
+\end{theorem}
+
+\section{Energies of Singlet and Triplet States}
+
+Thus, in terms of $J$ and $K$ the energies of the singlet and triplet states become:
+\begin{equation*}
+  E_{S/T} = E_{1\ce{s}} + E_{2\ce{s}} + J_{1\ce{s}2\ce{s}} \pm  K_{1\ce{s}2\ce{s}}
+\end{equation*}
+
+In other chemistry courses you may hev been taught that there are only two spin states for an electron pair: $\uparrow \downarrow$ and $\uparrow \uparrow$. The
+former represented the singlet (S) state and the latter the triplet (T) state.
+
+Instead, they look like $\uparrow \downarrow \pm \downarrow \uparrow$, with $\uparrow \downarrow - \downarrow \uparrow$ being the singlet and
+$\uparrow \downarrow + \downarrow \uparrow$ being part of the triplet.
+
+\subsection*{What determines electron pairing?}
+
+In the more precise picture we have derived here, \textbf{the \textit{spin} part of the wavefunction determines \marginnote{Electron spins are not labeled as they are indistinguishable.}
+if electrons are paired or unpaired}. An electron pair has the characteristic spin part $\alpha \beta - \beta \alpha$; paired 
+electrons form a singlet. Spin parts that look like $\alpha \alpha$, $\beta \beta$ or $\alpha \beta + \beta \alpha$ are unpaired triplet configurations.
+
+As we have seen above, \marginnote{In some situations, this is called the pairing energy.} \textbf{pairing two electrons raises the energy through the exchange integral}. The
+counterintuitive thing that we have to re-learn is that $\alpha \beta + \beta \alpha$ does not describe an electron pair.
+
+Given this picture, we note that the three triplet states would then correspond to three possible $z$-projections of spin. The three triplet states should then have
+\begin{equation*}
+  M_s = -1, 0, +1.
+\end{equation*}
+
+This gives us some qualitative picture of what the $\alpha \beta + \beta \alpha$ state means and why it corresponds to unpaired electrons. In the
+$\alpha \beta + \beta \alpha$ state, the spins are oriented parallel to each other, but they are both oriented \textit{perpendicular} to the $z$-axis.
+
+\bibliography{lec34}
+\bibliographystyle{plainnat}
+
+\end{document}
