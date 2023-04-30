@@ -73,6 +73,66 @@ Vector operations, partial derivatives. Differential operators (div, grad, curl,
       \cline{3-4}
   \end{tabular}
 
+  \section{Differential Operators (div, grad, curl)}
+
+\subsection{Gradient ($\nabla$)}
+
+$\nabla f$ is called the \textbf{gradient} of $f$.
+
+For a given point, we get a vector\marginnote{$\nabla f$ is a vector-valued function, where $f: \mathbb{R}^n \rightarrow \mathbb{R}$ is a scalar field.}; the
+entire operation returns a vector field. Perhaps one of the most important properties of the gradient
+
+
+
+\begin{theorem}
+  $\nabla f$ is orthogonal to the level surface $w = c$.
+\end{theorem}
+
+More stuff nom nom nom.
+
+\begin{equation*}
+  \int_{\mathcal{C}}(\nabla \phi) \cdot \mathrm{d} \mathbf{x} = 
+\end{equation*}
+
+This result is sometimes called the \textit{gradient theorem}.
+
+\subsection{Divergence ($\nabla \cdot$)}
+
+\subsection{Curl ($\nabla \times$)}
+
+\subsection{Laplacian ($\nabla^2$)}
+
+\section{Stokes' Theorem}
+
+In particular, the line integral of a scalar field is
+
+\begin{theorem}[Stokes' Theorem]
+
+  \begin{equation*}
+    \int_{S} (\nabla \times F) \cdot \differential \mathbf{S} = \int_{C} F \cdot \differential \mathbf{x}
+  \end{equation*}
+  
+\end{theorem}
+
+\section{Applications in Electromagnetism}
+
+Vector calculus is an important part 
+
+\begin{theorem}[Gauss' Law]
+  \begin{equation*}
+    \nabla \cdot \vec{E} = \frac{\rho}{\epsilon_0}
+  \end{equation*}
+  where $\rho$ is the charge density.
+\end{theorem}
+
+By the divergence theorem, we can reformulate the above differential form as the following
+\begin{equation*}
+  \iint_S \vec{E} \cdot \hat{\mathbf{n}} \differential S = \iiint_D \nabla \cdot \vec{E} \differential V
+\end{equation*}
+where $Q$ is the total charge inside the closed surface $S$.
+
+This formula tells us how charges influence the electric field.
+
 \bibliography{summary}
 \bibliographystyle{plainnat}
 
