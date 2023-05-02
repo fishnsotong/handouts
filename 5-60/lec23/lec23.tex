@@ -1,0 +1,122 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{23. Colligative Properties\thanks{Wayne~W.~Z. Yeo}}
+
+\author[MIT 5.60]{\textnormal{MIT 5.60} Thermodynamics and Kinetics\thanks{Course Instructors: Keith A. Nelson, Moungi Bawendi}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics,siunitx}
+\usepackage[version=4]{mhchem} \usepackage{chemmacros}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\begin{document}
+
+\maketitle % this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+We can apply the concept of \textbf{chemical potential} to describe and quantify the effect of a
+solute on certain thermodynamic properties of a solution. These \textbf{colligative properties} 
+include the lowering of vapour pressure of the solvent, the elevation of its boiling point, the 
+depression of its freezing point, and the origin of osmotic pressure; they define a class
+of real solutions that diverge from ideal solutions.
+\end{abstract}
+
+%\printclassoptions
+
+In equilibrium systems, the chemical potential of a substance is the same in every phase in which it occurs.
+(How do we know this is the case?)
+
+\section*{Lowering of Vapour Pressure}
+
+$$\Delta p_A = p_A - p^{*}_{A} = -x_B p^*_A$$
+
+Where $x_B$ is the\dots
+
+\section*{Boiling Point Elevation}
+
+\section*{Freezing Point Depression}
+
+\section*{Osmotic Pressure}
+
+Here we derive a relation between the osmotic pressure and the molar concentration of solute.
+
+\begin{equation}
+    \Pi V = RT n_B
+\end{equation}
+
+This is the van 't Hoff equation for osmotic pressure. It bears striking resemblance to the ideal gas law. \marginnote{Not to be confused for the relation that describes the temperature dependence of the equilibrium constant, $K$.}
+Replacing $\ce{[B]} = n_B / V$, we get the osmotic pressure relation:
+
+\begin{equation}
+    \Pi = \ce{[B]}RT
+\end{equation}
+
+This relation is valid only for ideal solutions.
+
+\section{Electrochemistry Dump}
+\textbf{Half-cell reactions.} Overall reaction can be conceived as two entirely separate reactions,
+occurring at each electrode.
+
+\begin{theorem}[Nernst Equation] Allows us to relate cell potential to the actual concentration of species
+  present and the standard reduction potential ($E^\standardstate$).
+  \begin{equation*}
+    E = E^\standardstate - \frac{RT}{nF} \ln Q = E^\standardstate - \frac{RT}{nF} \ln\left(\frac{\alpha_B}{\alpha_A}\right)
+\end{equation*}
+
+\begin{proof}
+  Suppose that the conventional cell reaction has the following general form
+  \begin{equation*}
+    \ce{aA + bB -> pP + qQ}.
+  \end{equation*}
+
+  $\Delta_{\mathrm{r}}G$ can be written in terms of individual chemical potentials.
+  \begin{equation*}
+    \Delta_{\mathrm{r}}G = p\mu_P + q\mu_Q - a\mu_A - b\mu_B
+  \end{equation*}
+  (of course, this is at standard state; above equation needs to change)
+\end{proof}
+  
+\end{theorem}
+
+\section{Summary}
+
+\begin{itemize}
+  \item The First Law relates heat, work and the change in internal energy.
+  \item Heat and work are path functions, whereas internal energy is a state function.
+  \item By convention the heat $q$ is positive when heat is absorbed by the system and $w$ is positive when work is done on the system.
+\end{itemize}
+
+\bibliography{lec23}
+\bibliographystyle{plainnat}
+
+
+
+\end{document}
