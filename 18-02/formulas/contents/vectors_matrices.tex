@@ -6,10 +6,10 @@
 Geometrically, $A \cdot B = |A| |B| \cos \theta$.
 
 The dot product is computed as follows for an $N$-dimensional vector
-
 \begin{equation*}
   A \cdot B = \sum_{i}^{N} a_i b_i
 \end{equation*}
+(i) When $\theta = \pi / 2$, $A \cdot B = 0$ (ii) $A \cdot A = |A|^2$
 
 \subsection*{Cross product}
 
@@ -20,7 +20,7 @@ The cross product is computed as follows
 \begin{equation*}
   A \times B = \begin{vmatrix} \hat{i} & \hat{j} & \hat{k} \\ a_i & a_j & a_k \\ b_i  & b_j & b_k\end{vmatrix}
 \end{equation*}
-to give us a 3-vector.
+a 3-vector orthogonal to both $A$ \textbf{and} $B$.
 
 \subsection*{Scalar Triple Product}
 Gives volume of parallelpiped
@@ -30,9 +30,23 @@ Gives volume of parallelpiped
 \textit{Note}: While the dot product is similarly defined in any dimension $\mathbb{R}^n$, the cross product and hence
 the triple scalar product are only defined in $\mathbb{R}^3$.
 
-\subsection*{Matrix Inverse}
-Regular trig functions are `circular' functions. If $u = \cos(x)$ and $v = \sin(x)$, then $u^2 + v^2 = 1$, which is the equation of a unit circle.
+\subsection*{Equation of a line}
+A line passing through $\textbf{\textit{a}}$ in the direction of $\textbf{\textit{b}}$ can be parameterised as
+$\textbf{\textit{r}} = \textbf{\textit{a}} + \lambda \textbf{\textit{b}}$.
+\subsection*{Equation of a plane}
+A point $\textbf{\textit{r}} = (x,y,z)$ is on a plane with a normal vector $\textbf{\textit{n}}$
+if $\textbf{\textit{r}} \cdot \textbf{\textit{n}} = \textbf{\textit{a}} \cdot \textbf{\textit{n}}$.
 
+\subsection*{Matrix Inverse}
+$A$ is invertible iff $\det A \neq 0$. \\
+$A^{-1}$ is such that $AA^{-1} = A^{-1}A = I$.
+\begin{equation*}
+  A^{-1} = \frac{[\mathrm{cof}(A)]^T}{\det A}
+\end{equation*}
+1. Minors: replace $A_{ij}$ with determinants\\
+2. Cofactors: flip signs to checkerboard \\
+3. Transpose: exchange rows \& columns \\
+4. Divide by $\det A$.
 \subsection*{Eigenvalues and Eigenvectors}
 
 The $n$ eigenvalues $\lambda_i$ and eigenvectors $\mathbf{u}_i$ of 

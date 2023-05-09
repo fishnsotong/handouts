@@ -1,4 +1,4 @@
-\section{Vector Calculus}
+\section{Vector Calculus Operators}
 
 \subsection*{Gradient}
 For a function $\phi(x, y, z)$,
@@ -16,15 +16,30 @@ the following equation is the rate of change of $\phi$ with distance in the dire
 \begin{equation*}
     \textbf{\textit{n}} = \frac{\nabla \phi}{|\phi|}.
 \end{equation*}
-
+Given $\textbf{\textit{n}}$, we can find the tangent plane.
 \subsection*{Divergence}
+For a vector field $\mathbf{A}$ in $\mathbb{R}^3$
+\begin{equation*}
+    \nabla \cdot \mathbf{A} = \pdv{A_x}{x} + \smash{\pdv{A_y}{y}}+ \pdv{A_z}{z}
+\end{equation*}
+
+Per definition of dot product, for $\mathbb{R}^n$
+\begin{equation*}
+    \nabla \cdot \mathbf{A} = \sum_{i}^{n} \pdv{A_i}{x_i}
+\end{equation*}
+
+$\divergence \mathbf{A}$ is the net flux out per unit volume around a point in a vector field.
 
 \subsection*{Curl}
 
 \subsection*{Laplacian}
+Take note that $\nabla^2 \phi = \divergence \grad \phi$ as we take the inner product of two gradient operators $\nabla \cdot \nabla = \nabla^2$.
 \begin{equation*}
     \nabla^2 \phi =  \pdv[order=2]{\phi}{x} + \pdv[order=2]{\phi}{x} + \pdv[order=2]{\phi}{x}
 \end{equation*}
+
+$\nabla^2 \phi$ is a useful measure of convexity in higher dimensions.
+\vspace{\baselineskip}
 
 For useful identities regarding the above differential operators, see the formula booklet.
 

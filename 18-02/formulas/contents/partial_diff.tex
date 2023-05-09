@@ -4,7 +4,37 @@ For $f(x,y)$ how do we compute $\partial f / \partial x$?
 
 Treat $y$ as constant, and $x$ as variable.
 
+\textbf{Mixed derivatives} can be calculated in any order.
+\begin{equation*}
+    \pdv{f}{x,y} = \pdv{f}{y,x}
+\end{equation*}
+
 \subsection*{Second Derivative Test}
 
 A \textit{critical point} of $f(x,y)$ is where \\
 $f_x = 0$ \textbf{and} $f_y = 0$.
+
+There are three types of critical point for $f(x,y)$: minima, maxima and \textit{saddle points} - where the graph
+of the function lies both above and below the tangent plane at the point.
+\vspace{\baselineskip}
+
+1. Find the critical points by solving the simultaneous equations
+\begin{equation*}
+\begin{cases}
+    f_x(x,y) = 0 \\
+    f_y(x,y) = 0
+\end{cases}
+\end{equation*}
+2. Calculate the 3 second derivatives at the critical point $(x_0, y_0)$
+\begin{equation*}
+    A = f_{xx} \quad B = f_{xy} = f_{yx} \quad C = f_{yy}
+\end{equation*}
+
+3. \textbf{Second-derivative test.} Three cases.
+
+1. $AC - B^2 > 0$, $A > 0$ or $C > 0 \implies$ min \\
+2. $AC - B^2 > 0$, $A < 0$ or $C < 0 \implies$ max \\
+3. $AC - B^2 < 0 \implies$ saddle point \\
+4. $AC - B^2 = 0 \implies$ fucked
+
+Tangent plane to the graph at the critical point $(x_0, y_0)$ is horizontal.
