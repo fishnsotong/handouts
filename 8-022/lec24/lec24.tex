@@ -1,0 +1,106 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{24. Maxwell's Equations\thanks{Wayne~W.~Z. Yeo}}
+
+\author[MIT 8.022]{\textnormal{MIT 8.022} Electricity \& Magnetism\thanks{Course Instructors: Gabriella Sciolla, Walter Lewin}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics}
+\usepackage[version=4]{mhchem}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+
+\setlength\fboxsep{7px}
+
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+In this lecture, we finally put everything together and get the full set of "field equations" which describe electricity and magnetism -- 
+\textbf{Maxwell's equations}, fully developed by James Clerk Maxwell in 1873.
+
+\end{abstract}
+
+%\printclassoptions
+
+\section{Introduction}
+\textbf{Books.} This topic has been given a thorough discussion in Chapter 9 of Purcell \& Morin\cite{purcell2013electricity} -- I will refer to these texts from time to time.
+
+\section*{Maxwell's equations in integral form}
+To wrap this section up, let's write Maxwell's equations in the fashion in which they are most useful: in integral form. These
+are easily derived by plugging the differential forms into integrals and invoking various vector theorems
+
+\begin{theorem}[Integral form of Gauss' law]
+  The electric flux through a closed surface $S$ is the product of $4\pi$ and the charge enclosed by $S$.
+  \begin{equation}
+    \Phi_E (S) = \oint_S \vec{E} \cdot \differential \vec{a} = 4 \pi Q_{\mathrm{encl}}
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}
+  The magnetic flux through a closed surface $S$ is zero.\marginnote{Follows quite naturally from our observation that there are no magnetic point charges!}
+  \begin{equation}
+    \Phi_B (S) = \oint_S \vec{B} \cdot \differential \vec{a} = 0
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}[Integral form of Faraday's law]
+  The emf induced around a closed contour $C$ equals the product of $-1/c$ and the rate of change of magnetic flux
+  through the surface $S$ bounded by $C$.
+  \begin{equation}
+    \epsilon = \oint_C \vec{E} \cdot \differential \vec{s} = -\frac{1}{c}\pdv*{f}{x}
+  \end{equation}
+\end{theorem}
+
+\begin{theorem}
+  The line integral of the $\vec{\mathbf{B}}$ field around a closed contour $C$ is the product of $4 \pi / c$ and the sum of the
+  total current (real and displacement) passing through that contour.
+  \begin{equation}
+    \oint_C \vec{B} \cdot \differential \vec{s} = \frac{4 \pi}{c} (I + I_d)
+  \end{equation}
+  where
+  \begin{align*}
+    I &= \int_S \vec{J} \cdot \differential a \\
+    I_d &= \int_S \vec{J}_d \cdot \differential a = \frac{1}{4 \pi}\pdv{\Phi_E(S)}{t}
+  \end{align*}
+\end{theorem}
+
+Once we have written down the full set of Maxwell's equations, we discover that in vacuum they lead to wave solutions
+with a set of specific properties.
+
+\bibliography{lec24}
+\bibliographystyle{plainnat}
+\end{document}
