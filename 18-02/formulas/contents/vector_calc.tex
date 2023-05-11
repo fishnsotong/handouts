@@ -1,4 +1,4 @@
-\section{Vector Calculus Operators}
+\section{Vector Differential Calculus}
 
 \subsection*{Gradient}
 For a function $\phi(x, y, z)$,
@@ -6,10 +6,12 @@ For a function $\phi(x, y, z)$,
     \nabla \phi = \pdv{\phi}{x} \textbf{\textit{i}} + \pdv{\phi}{y} \textbf{\textit{j}} + \pdv{\phi}{z} \textbf{\textit{k}}
 \end{equation*}
 
+$\nabla \phi$ points in the direction of maximum increase of $\phi$. $|\nabla \phi|$ gives the slope (rate of change) along this direction.
+
 \textbf{Directional derivatives.} Where $\textbf{\textit{t}}$ is a \textit{unit vector},
 the following equation is the rate of change of $\phi$ with distance in the direction of $\textbf{\textit{t}}$
 \begin{equation*}
-    \textbf{\textit{t}} \cdot \nabla \phi = \odv{\phi}{s}
+    \textbf{\textit{t}} \cdot \nabla \phi = \dv{\phi}{s}
 \end{equation*}
 
 \textbf{Normal to a surface ($\phi = c$).} The \textit{unit normal vector} to that surface at any point
@@ -37,7 +39,7 @@ If $\nabla \times \mathbf{E} = 0$, $\mathbf{E}$ is a conservative vector field. 
 \subsection*{Laplacian}
 Take note that $\nabla^2 \phi = \divergence \grad \phi$ as we take the inner product of two gradient operators $\nabla \cdot \nabla = \nabla^2$.
 \begin{equation*}
-    \nabla^2 \phi =  \pdv[order=2]{\phi}{x} + \pdv[order=2]{\phi}{x} + \pdv[order=2]{\phi}{x}
+    \nabla^2 \phi =  \pdv[2]{\phi}{x} + \pdv[2]{\phi}{x} + \pdv[2]{\phi}{x}
 \end{equation*}
 
 $\nabla^2 \phi$ is a useful measure of convexity in higher dimensions.
@@ -48,9 +50,36 @@ For useful identities regarding the above differential operators, see the formul
 \section{Vector Integral Calculus}
 
 \subsection*{Line Integrals}
-Line integral over a \textbf{scalar field} is
+Line integral over a \textbf{scalar field} $\phi(\mathbf{x})$ is
+\begin{equation*}
+    \int_C \phi \differential s = \int_{t_1}^{t_2} \phi(\mathbf{x}(t)) \left\lvert \dv{\mathbf{x}}{t} \right\rvert \differential t
+\end{equation*}
 
-Line integral over a \textbf{vector field} is
+When parameterisation is by arc length $s$ we can use a simpler form $\because |\differential x| = |\differential s|$.
+
+\begin{equation*}
+    \int_C \phi \differential s = \int_{t_1}^{t_2} \phi(\mathbf{x}(s)) \differential s
+\end{equation*}
+
+Line integral over a \textbf{vector field} $\mathbf{F}(\mathbf{x})$ is
+\begin{equation*}
+    \int_C \mathbf{F} \cdot \differential \mathbf{x} = \int_{t_1}^{t_2} \mathbf{F}(\mathbf{x}(t))\cdot \dv{\mathbf{x}}{t}\differential t
+\end{equation*}
+
+\textbf{Properties of line integrals.} If a curve is reversed in direction, the line integral changes sign.
+\begin{equation*}
+    \int_{- \Gamma} \mathbf{F} \cdot \differential \mathbf{x} = - \int_{\Gamma} \mathbf{F} \cdot \differential \mathbf{x}
+\end{equation*}
+
+If curves are added, the line integrals also add up
+
+\begin{equation*}
+    \int_{\Gamma_1 + \Gamma_2} \mathbf{F} \cdot \differential \mathbf{x} = \int_{\Gamma_1} \mathbf{F} \cdot \differential \mathbf{x} + \int_{\Gamma_2} \mathbf{F} \cdot \differential \mathbf{x}
+\end{equation*}
+
+\subsection*{Gradient Theorem}
+
+If a vector field is the gradient of a scalar field, its line integral is \textit{path independent}.
 
 \subsection*{Surface Integrals}
 \subsection*{Volume Integrals}

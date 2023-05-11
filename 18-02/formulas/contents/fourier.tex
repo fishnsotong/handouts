@@ -1,4 +1,14 @@
 \section{Fourier Series}
+The trigonometric functions form a \textit{basis} for the space of periodic functions with period $2L$. Almost
+any function can be written as the following infinite sum
+\begin{equation*}
+    f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}\left(a_n \cos\frac{n\pi x}{L} + b_n \sin \frac{n \pi x}{L}\right)
+\end{equation*}
 \subsection*{Parseval's Theorem}
 \subsection*{Complex Fourier Series}
+The Fourier series can be expressed more simply and compactly in the notation of the complex Fourier series.
+\begin{equation*}
+    f(x) = \sum_{n = -\infty}^{\infty}c_n \exp\left(-\frac{in\pi x}{L}\right)
+\end{equation*}
 This is useful for the discrete Fourier transform and the fast Fourier transform.
+\subsection*{Fourier Transform}
