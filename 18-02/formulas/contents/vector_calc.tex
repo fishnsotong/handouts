@@ -33,8 +33,12 @@ Per definition of dot product, for $\mathbb{R}^n$
 $\divergence \mathbf{A}$ is the net flux out per unit volume around a point in a vector field.
 
 \subsection*{Curl}
-
-If $\nabla \times \mathbf{E} = 0$, $\mathbf{E}$ is a conservative vector field. \textit{What does it mean for a field to be conservative?}
+For a vector field $\mathbf{A}$ in $\mathbb{R}^3$
+\begin{equation*}
+    \nabla \times \mathbf{A} = \mdet{\mathbf{i} & \mathbf{j} & \mathbf{k}\\ \partial_x & \partial_y & \partial_z \\ A_x & A_y & A_z}
+\end{equation*}
+$\nabla \times \mathbf{A}$ is a measure of how much vector $\mathbf{A}$ swirls/rotates around a particular point.
+If $\nabla \times \mathbf{E} = 0$, $\mathbf{E}$ is a conservative vector field. \textit{What does it mean for a field to be conservative? See Gradient Theorem.}
 
 \subsection*{Laplacian}
 Take note that $\nabla^2 \phi = \divergence \grad \phi$ as we take the inner product of two gradient operators $\nabla \cdot \nabla = \nabla^2$.
