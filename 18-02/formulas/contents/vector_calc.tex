@@ -82,14 +82,57 @@ If curves are added, the line integrals also add up
 \end{equation*}
 
 \subsection*{Gradient Theorem}
+Line integral of the gradient of a scalar field $\phi$ is given by the value of $\phi$ at the boundaries $1$ and $2$.
 
+\begin{equation*}
+    \phi_2 - \phi_1 = \int\limits_{\mathrm{curve}} \grad \phi \cdot \differential \mathbf{s}
+\end{equation*}
+\textbf{Corollaries.} \\
 If a vector field is the gradient of a scalar field, its line integral is \textit{path independent}.
+\begin{equation*}
+    \oint \grad \phi \cdot \differential \bf{x} = 0
+\end{equation*}
+Since the start and end points are the same for a closed integral, $\phi_2 - \phi_1 = 0$.
+
+\subsection*{Conservative Vector Fields}
+
+ \textbf{Conservative forces.} Certain force fields, like the gravitational or electrostatic force can be written in the form $\mathbf{F} = -\grad \phi$.
+ 
+ \textbf{Potential.} The scalar field $\phi(\mathbf{x})$ is known as the \textit{potential}.
+
+ \textbf{Work.} Total work done by a force field $\mathbf{F}(\mathbf{x})$ when particle moves along curve $C$
+ \begin{equation*}
+    W = \int_{C} \bf{F} \cdot \differential \bf{x}
+ \end{equation*}
+
+By the \textit{gradient theorem},
+ \begin{equation*}
+    W = - \int_{C} \bf{\grad \phi} \cdot \differential \bf{x} = \phi(\mathbf{x}_{\mathrm{1}}) - \phi(\mathbf{x}_{\mathrm{2}})
+ \end{equation*}
+
+ Work done equal to the \textit{potential difference} between the endpoints; is independent of path taken by the object between them. 
+ 
+ $$\oint \mathbf{F} \cdot \differential \mathbf{x} = 0$$
+ 
+ for \textit{all} closed curves. No net work done around a closed path as there is no net change in potential energy.
+ 
+ \textbf{Definition of conservative field.} \\
+ (1) $\mathbf{F} = -\grad \phi$ \\
+ (2) $\int_C \mathbf{F} \cdot \differential \mathbf{x}$ is path independent \\
+ (3) $\oint \mathbf{F} \cdot \differential \mathbf{x} = 0$ \\
+ (4) $\nabla \times \mathbf{F} = 0$
 
 \subsection*{Surface Integrals}
 \subsection*{Volume Integrals}
 Volume integrals are simpler than line or surface integrals because $\mathrm{d}V$ is a scalar quantity.
 
 \subsection*{Gauss' Theorem (Divergence Theorem)}
-\subsection*{Stokes' Theorem}
+\begin{equation*}
+    \int\limits_{\mathrm{surface}} \mathbf{F} \cdot \differential \mathbf{a} \quad = \int\limits_{\mathrm{volume}} \divergence \mathbf{F} \differential v
+\end{equation*}
+\subsection*{Stokes' Theorem (Curl Theorem)}
+\begin{equation*}
+    \int\limits_{\mathrm{curve}} \mathbf{A} \cdot \differential \mathbf{s} \quad = \int\limits_{\mathrm{surface}} \curl \mathbf{A} \cdot \differential \mathbf{a}
+\end{equation*}
 \subsection*{Green's Theorem}
 \subsection*{Green's Second Theorem}
