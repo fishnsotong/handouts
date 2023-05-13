@@ -1,10 +1,78 @@
+\pagebreak
 \section{Fourier Series}
 The trigonometric functions form a \textit{basis} for the space of periodic functions with period $2L$. Almost
-any function can be written as the following infinite sum
+any function can be written as the following infinite sum:
 \begin{equation*}
     f(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty}\left(a_n \cos\frac{n\pi x}{L} + b_n \sin \frac{n \pi x}{L}\right)
 \end{equation*}
+The key to finding the Fourier coefficients $a_n$ and $b_n$ is \textit{orthogonality}.
+
+\subsection*{Trigonometric orthogonality relations}
+The following results hold over any interval $[a,b]$ of length $2L = b - a \because$ integrands are periodic
+with period $2L$.
+\begin{equation*}
+    \int_{-L}^{L} \cos \frac{m \pi x}{L} \cos \frac{n \pi x}{L} = \begin{cases}
+        2L &\textrm{if } m = n = 0 \\
+        L  &\textrm{if } m = n \neq 0 \\
+        0  &\textrm{if } m \neq n.
+    \end{cases}
+\end{equation*}
+
+\begin{equation*}
+    \int_{-L}^{L} \cos \frac{m \pi x}{L} \sin \frac{n \pi x}{L} = 0
+\end{equation*}
+
+\begin{equation*}
+    \int_{-L}^{L} \sin \frac{m \pi x}{L} \sin \frac{n \pi x}{L}   = \begin{cases}
+        0 \quad \textrm{if } m = n = 0 \\
+        L \quad \textrm{if } m = n \neq 0 \\
+        0 \quad \textrm{if } m \neq n.
+    \end{cases}
+\end{equation*}
+
+\subsection*{Finding the Fourier coefficients}
+To find $a_0$, integrate f(x) over one period:
+\begin{equation*}
+    \int_{-L}^{L}f(x) \differential x = \frac{a_0}{2}2L+0+0=a_0L
+\end{equation*}
+To find $a_m$ for $m \geq 1$, multiply $f(x)$ by $\cos(m \pi x / L)$, integrate over one period:
+\begin{equation*}
+    \int_{-L}^{L} f(x) \cos \frac{m\pi x}{L} \differential x = 0 + a_m L + 0 = a_m L
+\end{equation*}
+Only the term $n = m$ contributes to the result. To find $b_m$ for $m \geq 1$, multiply $f(x)$ by $\sin(m \pi x / L)$, integrate over one period:
+\begin{equation*}
+    \int_{-L}^{L} f(x) \sin \frac{m\pi x}{L} \differential x = 0 + 0 + b_m L = b_m L
+\end{equation*}
+In summary,
+\begin{equation*}
+    \begin{aligned}
+        a_n &= \frac{1}{L} \int_{-L}^{L}f(x) \cos\frac{n \pi x}{L} \differential x \\
+        b_n &= \frac{1}{L} \int_{-L}^{L}f(x) \sin\frac{n \pi x}{L} \differential x
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Even and odd functions}
+Even function: $f(-x) = f(x)$ \\
+Odd function: $f(-x) = -f(x)$
+\vspace{\baselineskip}
+
+The integral of an even function over a symmetric integral is twice the integral over the positive half of the interval:
+\begin{equation*}
+    \int_{-L}^{L} f_e(x) \differential x = 2 \int_{0}^{L} f_e(x) \differential x,
+\end{equation*}
+The integral of an odd function over a symmetric integral is zero:
+\begin{equation*}
+    \int_{-L}^{L} f_o(x) \differential x = 0.
+\end{equation*}
+
+Be prepared to integrate by parts, use trigonometric substitutions or symmetry arguments to simplify the integrals.
+
 \subsection*{Parseval's Theorem}
+The mean square value of a function $f(x)$ with period $2L$ is:
+\begin{equation*}
+    \frac{1}{2L}\int_{-L}^{L}[f(x)]^2 \differential x = \frac{a_0^2}{4} = \frac{1}{2}\sum_{n=1}^{\infty}(a_n^2 + b_n^2)
+\end{equation*}
+Orthogonality relations have eliminated the cross terms of the Fourier series binomial expansion.
 \subsection*{Complex Fourier Series}
 The Fourier series can be expressed more simply and compactly in the notation of the complex Fourier series.
 \begin{equation*}
