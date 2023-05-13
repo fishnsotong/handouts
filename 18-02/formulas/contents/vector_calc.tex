@@ -124,11 +124,18 @@ By the \textit{gradient theorem},
 
 \subsection*{Surface Integrals}
 
-A plane surface in 3D space has \textit{vector area} $\mathbf{S} = A \mathbf{n}$. The \textit{vector area element} is $\differential \mathbf{S} = \mathbf{n} \differential S$ as it touches the tangent plane at some point.
+A \textbf{plane surface} in 3D space has \textit{vector area} $\mathbf{S} = A \mathbf{n}$. The \textit{vector area element} is $\differential \mathbf{S} = \mathbf{n} \differential S$ as it touches the tangent plane at some point.
 
 The \textbf{total vector area} of $S$ is:
 \begin{equation*}
     \mathbf{S} = \int_{S} \differential \mathbf{S} = \int_{S} \mathbf{n} \differential S
+\end{equation*}
+A \textbf{curved surface} $S$ in 3D space can be defined by a vector-valued function with two parameters $\mathbf{X}(s,t)$. The vector area element is an infinitesimal parallelogram given by the following cross product:
+\begin{equation*}
+    \begin{aligned}
+    \differential \mathbf{S} &= \left(\pdv{\mathbf{X}}{s} \differential s\right) \times \left(\pdv{\mathbf{X}}{t} \differential t\right) \\
+    &= \left(\pdv{\mathbf{X}}{s} \times \pdv{\mathbf{X}}{t} \right) \differential s \differential t
+    \end{aligned}
 \end{equation*}
 The \textbf{flux} of vector field $\mathbf{F}$ through surface $S$ given by $\phi = c$ is:
 \begin{equation*}
@@ -145,7 +152,8 @@ A volume integral where $T$ is a scalar function, $\differential \tau$ is an inf
 \end{equation*}
 You can do the integrals in any order. 
 
-The infinitesimal volume element $\differential \tau$:
+The infinitesimal volume element $\differential \tau$, in spherical polar coordinates:
+
 $\differential \tau = \differential l_r \differential l_\theta \differential l_\phi = r^2 \sin \theta \differential r \differential \theta \differential \phi$
 
 Volume integrals are simpler than line or surface integrals because $\mathrm{d}V$ is a scalar quantity.
@@ -158,5 +166,28 @@ Volume integrals are simpler than line or surface integrals because $\mathrm{d}V
 \begin{equation*}
     \int\limits_{\mathrm{curve}} \mathbf{A} \cdot \differential \mathbf{s} \quad = \int\limits_{\mathrm{surface}} \curl \mathbf{A} \cdot \differential \mathbf{a}
 \end{equation*}
+\subsection*{Note on Integral Theorems}
+Generally, the \textit{integral} of a \textit{derivative} over a \textbf{region} is equal to the function's value at the \textbf{boundary}.
+\begin{equation*}
+    \begin{aligned}
+    \phi_2 - \phi_1 \quad &= \int\limits_{\mathrm{curve}} \grad \phi \cdot \differential \mathbf{s} \\
+    \int\limits_{\mathrm{surface}} \mathbf{F} \cdot \differential \mathbf{a} \quad &= \int\limits_{\mathrm{volume}} \divergence \mathbf{F} \differential v \\
+    \int\limits_{\mathrm{curve}} \mathbf{A} \cdot \differential \mathbf{s} \quad &= \int\limits_{\mathrm{surface}} \curl \mathbf{A} \cdot \differential \mathbf{a}
+\end{aligned}
+\end{equation*}
 \subsection*{Green's Theorem}
+A special case of Gauss' Theorem applied to the vector field $\psi \grad \phi$.
+\begin{equation*}
+    \begin{aligned}
+        \int_{S} \psi \nabla \phi \cdot \differential \mathbf{S} &= \int_{\tau} \nabla \cdot (\psi \nabla \phi) \differential \tau \\
+        &= \int_{\tau} [\psi \nabla^2 \phi + (\nabla \psi) \cdot (\nabla \phi)] \differential \tau
+    \end{aligned}
+\end{equation*}
 \subsection*{Green's Second Theorem}
+$\nabla^2$ is a self-adjoint operator in the $L^2$ inner product for functions vanishing on the boundary, equating to zero.
+\begin{equation*}
+    \begin{aligned}
+    \int_{\tau}(\psi \nabla^2 \phi - \phi \nabla^2 &\psi) \differential \tau = \\
+    &\int_{S} [\psi(\nabla \phi) - \phi(\nabla \psi)] \cdot \differential \mathrm{S}
+    \end{aligned}
+\end{equation*}
