@@ -65,6 +65,21 @@ The integral of an odd function over a symmetric integral is zero:
     \int_{-L}^{L} f_o(x) \differential x = 0.
 \end{equation*}
 
+\textbf{When evaluating a Fourier series}, if $f(x)$ is \textit{even}, the Fourier series only contains cosine terms
+\begin{equation*}
+    f_e(x) = \frac{a_0}{2} + \sum_{n=1}^{\infty} a_n \cos \frac{n \pi x}{L}
+\end{equation*}
+If f(x) is \textit{odd}, Fourier series only contains sine terms
+\begin{equation*}
+    f_o(x) =  \sum_{n=1}^{\infty} b_n \sin \frac{n \pi x}{L}
+\end{equation*}
+Coefficients for the above can be found by integrating over half a period
+\begin{equation*}
+    \begin{aligned}
+        a_n &= \frac{2}{L}\int_{0}^{L} f_e(x) \cos \frac{n \pi x}{L} \differential x \\
+        b_n &= \frac{2}{L}\int_{0}^{L} f_o(x) \sin \frac{n \pi x}{L} \differential x
+    \end{aligned}
+\end{equation*}
 Be prepared to integrate by parts, use trigonometric substitutions or symmetry arguments to simplify the integrals.
 
 \subsection*{Parseval's Theorem}
@@ -79,4 +94,5 @@ The Fourier series can be expressed more simply and compactly in the notation of
     f(x) = \sum_{n = -\infty}^{\infty}c_n \exp\left(-\frac{in\pi x}{L}\right)
 \end{equation*}
 This is useful for the discrete Fourier transform and the fast Fourier transform.
+
 \subsection*{Fourier Transform}

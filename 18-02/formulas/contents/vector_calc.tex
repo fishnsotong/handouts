@@ -123,7 +123,31 @@ By the \textit{gradient theorem},
  (4) $\nabla \times \mathbf{F} = 0$
 
 \subsection*{Surface Integrals}
+
+A plane surface in 3D space has \textit{vector area} $\mathbf{S} = A \mathbf{n}$. The \textit{vector area element} is $\differential \mathbf{S} = \mathbf{n} \differential S$ as it touches the tangent plane at some point.
+
+The \textbf{total vector area} of $S$ is:
+\begin{equation*}
+    \mathbf{S} = \int_{S} \differential \mathbf{S} = \int_{S} \mathbf{n} \differential S
+\end{equation*}
+The \textbf{flux} of vector field $\mathbf{F}$ through surface $S$ given by $\phi = c$ is:
+\begin{equation*}
+    \int_{S} \mathbf{F} \cdot \differential \mathbf{S} = \int_{S} \mathbf{F} \cdot \mathbf{n} \differential S = \iint \mathbf{F} \cdot \frac{\grad \phi}{|\grad \phi|} \differential S
+\end{equation*}
+
+To evaluate such an integral, we generally need to find a parametrisation of the surface, and expressions for $\mathbf{n}$ and $\differential S$. We
+then need to calculate a double integral over the surface.
+
 \subsection*{Volume Integrals}
+A volume integral where $T$ is a scalar function, $\differential \tau$ is an infinitesimal volume element is, in Cartesian coordinates:
+\begin{equation*}
+    \int_{V} T \differential \tau = \iiint T \differential x \differential y \differential z
+\end{equation*}
+You can do the integrals in any order. 
+
+The infinitesimal volume element $\differential \tau$:
+$\differential \tau = \differential l_r \differential l_\theta \differential l_\phi = r^2 \sin \theta \differential r \differential \theta \differential \phi$
+
 Volume integrals are simpler than line or surface integrals because $\mathrm{d}V$ is a scalar quantity.
 
 \subsection*{Gauss' Theorem (Divergence Theorem)}
