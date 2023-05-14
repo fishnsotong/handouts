@@ -18,30 +18,34 @@ For a system of many charges,
   U = \frac{1}{2}\sum_{j=1}^{N}\sum_{k \neq j}^{} \frac{1}{4\pi\epsilon_0}\frac{q_j q_k}{r_jk}
 \end{equation*}
 \subsection*{Electric field}
-The \textit{electric field} due to a charge distribution is
+The \textit{electric field} due to a charge distribution is (units: $\mathrm{NC}^{-1}$):
 \begin{equation*}
   \mathbf{E} = \frac{1}{4\pi\epsilon_0} \sum_{j=1}^{N} \frac{q_j\hat{\mathbf{r}}_j}{r^2_j}
 \end{equation*}
-I need to write more about what good this electric field does for us. \\
-The force on a test charge $q$ is $\mathbf{F} = q \mathbf{E}$.
+The electric field attaches to every point in the system a \textit{local property}: the force per unit charge that test charge $q_0$ will experience at any point.\\
+The force on a test charge $q$ is $\mathbf{F} = q \mathbf{E}$. \\
 \subsection*{Flux}
 Flux is defined as the surface integral of the perpendicular component of a vector field over a surface. 
 \begin{equation*}
   \Phi = \int_S \mathbf{E} \cdot \differential \mathbf{a}
 \end{equation*}
 Mathematically, $\Phi_E$ is the integral of the normal component of the electric field over a given area. 
-Conceptually, $\Phi_E$ is the `amount of field lines' passing through a given area.
+Conceptually, $\Phi_E$ is the `amount of field lines' passing through a given area: $\mathbf{E} \cdot \mathbf{A} = |E||A|\cos \theta$.
 
 \subsection*{Gauss' law}
 Flux of $\mathbf{E}$ through any closed surface equals $1/\epsilon_0$ times total charge enclosed
 by the surface.
 \begin{equation*}
-  \int_S \mathbf{E} \cdot \differential \mathbf{a} = \frac{1}{\epsilon_0} \int p \differential v
+  \int_S \mathbf{E} \cdot \differential \mathbf{a} = \frac{1}{\epsilon_0} \int p \differential v = \frac{1}{\epsilon_0} \sum_{i} q_i
 \end{equation*}
+Net electric flux $\Phi_E$ out is proportional to charge enclosed.
+
 For a sphere:
 \begin{equation*}
   E = \frac{Q}{4\pi\epsilon_0r^2}
 \end{equation*}
+
+
 For a line (what is $\lambda$?):
 \begin{equation*}
   E = \frac{\lambda}{2\pi\epsilon_0r}
@@ -51,4 +55,17 @@ For a sheet:
   E = \frac{\sigma}{2\epsilon_0}
 \end{equation*}
 
-Gauss' law is always valid, but it is only useful in calculating $\mathbf{E}$ in cases with enough symmetry.
+Gauss' law is always valid, but it is only useful in calculating $\mathbf{E}$ in cases with enough symmetry. 
+
+$\mathbf{E}$ is also known as the \textit{flux density.}
+
+\textbf{Corollaries for Gauss' law.}
+
+(1) Flux through any surface surrounding the same charges is the same.
+
+(2) Charges outside the surface do not affect the flux through the surface.
+
+(3) The enclosed charge can be inferred from the field at a closed surface.
+
+(4) The electric field \textit{outside} a \textbf{spherical} charge distribution of total charge $Q$ is the same
+as for a point charge $Q$ at the centre.

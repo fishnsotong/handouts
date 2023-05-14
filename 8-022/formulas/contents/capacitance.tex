@@ -1,16 +1,61 @@
-\section{Capacitance}
+\section{Conductors and Capacitance}
+\subsection*{Conductors}
+(1) $\mathbf{E} = 0$ inside a conductor
 
-Capacitance ($C$). Describes the ability of an object to store charge.
-$$Q = -C \Delta E = -\left(\frac{\epsilon A}{L}\right) \Delta E$$
+(2) $\rho = 0$ inside a conductor
 
-For example, a dielectric material can be polarised: dipoles can align in an electric field
-but charges cannot move. \\
+(3) $\phi = \phi_k$ at all points
+
+(4) $\mathbf{E}$ is perpendicular to the surface at any point on it, $E = \sigma / \epsilon_0$.
+
+(5) $Q_k = \int_S \sigma \differential a = \epsilon_0 \int_S \mathbf{E} \cdot \differential \mathrm{a}$.
+
+\subsection*{Capacitance}
+
+The \textit{capacitance} $C$ is defined by $Q=C\phi$, gives a measure of how much charge a conductor can hold
+for a given potential.
+
+For a sphere and parallel-plate capacitor, their capacitances are:
+\begin{equation*}
+    C_{\textrm{sphere}} = 4 \pi \epsilon_0 r \quad C_{\textrm{plates}} \frac{\epsilon_0 A}{L}
+\end{equation*}
 
 The energy in a capacitor is
 \begin{equation*}
-    U = \frac{1}{2}\epsilon_0 E^2.
+    U = \frac{1}{2}C\phi^2 = \frac{Q^2}{2C} = \frac{1}{2}Q\phi
+\end{equation*}
+Between two parallel conducting plates, $\Delta \phi = Ed$. The energy density (energy stored per unit volume) is:
+\begin{equation*}
+    u_d = \frac{1}{2}\epsilon_0 E^2.
 \end{equation*}
 
 The electric field is where the potential energy put into a capacitor is stored.
 
 \section{Dipoles and Dielectrics}
+A \textit{dipole} has two charges $\pm q$, a distance $l$ apart. The \textit{dipole moment} is $p = ql$. At 
+large distances, the potential and field due to a dipole are
+\begin{equation*}
+    \begin{aligned}
+        \phi(r,\theta) &= \frac{p \cos \theta}{4 \pi \epsilon_0 r^2} \\
+        \mathbf{E}(r,\theta) &= \frac{p}{4 \pi \epsilon_0 r^3}(2 \cos \theta \mathbf{\hat{r}} + \sin \theta \pmb{\hat{\theta}})
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Dipoles in a field}
+Torque experienced by a dipole:
+\begin{equation*}
+    \mathbf{\tau} = \mathbf{p} \times \mathbf{E}
+\end{equation*}
+If the angle between the field and the dipole is $\theta$, $|\tau| = pE\sin \theta$.
+
+Potential energy of a dipole in a field is work needed to put the dipole in position
+\begin{equation*}
+    U = - \mathbf{p} \cdot \mathbf{E}
+\end{equation*}
+Polarisability of a molecule is $\mathbf{p} = \alpha \mathbf{E}$.
+
+Polarisation is the dipole moment per unit volume of the material $\mathbf{P} = \sum \mathbf{p} / V$.
+
+\subsection*{Dielectrics}
+Where $C_0$ is capacitance in vacuum, the dielectric constant is $K = C/C_0$. $\mathbf{E}$ within
+the capacitor is reduced because of the dielectric.

@@ -1,8 +1,27 @@
 \section{Electric Potential}
+The electric potential $\phi$ due to a charge distribution is potential energy per unit charge ($U = q\phi$):
+\begin{equation*}
+    \phi = \sum_{i} \frac{q_i}{4 \pi \epsilon_0}
+\end{equation*}
+The energy required to assemble a group of charges from infinity is 
+\begin{equation*}
+    U = \frac{1}{2} \int \rho \phi \differential v = \frac{1}{2}\sum_{j=1}^{N}q_j \phi_j
+\end{equation*}
 The \textit{gradient} of a scalar function $\nabla f$ gives the direction in which $f$ has the largest
 rate of increase.
-
 \begin{equation*}
-    \mathbf{E} = - \nabla \phi
+    \mathbf{E} = - \grad \phi
 \end{equation*}
 Lines of electric field are perpendicular to surfaces of constant potential $\phi$.
+
+\subsection*{Potential difference}
+The \textit{electric potential difference} is:
+\begin{equation*}
+    \phi_2 - \phi_1 \quad = \int_{P_1}^{P_2} \grad \phi \cdot \differential \mathbf{s}
+\end{equation*}
+As $\mathbf{E}$ is conservative, potential difference is path independent.
+
+The electric \textit{potential energy} difference is:
+\begin{equation*}
+    U_{21} = q(\phi_2 - \phi_1)
+\end{equation*}
