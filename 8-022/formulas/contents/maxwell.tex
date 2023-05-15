@@ -1,8 +1,80 @@
 \section{Maxwell's Equations}
 
+\subsection*{Integral form of Gauss' law}
+\begin{equation*}
+    \oint_S \mathbf{E} \cdot \mathbf{\hat{n}} \differential a = \frac{q_\textrm{enc}}{\epsilon_0}
+  \end{equation*}
+Electric charge produces an electric field, and the flux of that field passing through any closed surface is 
+proportional to total charge contained within that surface.
+
+\textbf{Types of problems} \\
+(1) Given information about a distribution of electric charge, you can find the electric flux through a surface enclosing that charge.
+
+(2) Given information about the electric flux through a closed surface, you can find the total electric charge enclosed by that surface.
+
+  \subsection*{Differential form of Gauss' law}
+  \begin{equation*}
+    \divergence \mathbf{E} = \frac{\rho}{\epsilon_0}
+  \end{equation*}
+  The electric field produced by electric charge diverges from positive charge and converges upon negative charge.
+
+\subsection*{Integral form of Gauss' law for magnetism}
+\begin{equation*}
+    \oint_S \mathbf{B} \cdot \mathbf{\hat{n}} \differential a = 0
+  \end{equation*}
+  The total magnetic flux passing through any closed surface is zero.
+
+\subsection*{Gauss' law for magnetism: differential}
+\begin{equation*}
+    \div \mathbf{B} = 0
+\end{equation*}
+The divergence of the magnetic field at any point is zero.
+
+\subsection*{Faraday's law: integral form}
+\begin{equation*}
+    \oint_C \mathbf{E} \cdot \differential \mathbf{l} = -\dv{t}\int_S \mathbf{B} \cdot \mathbf{\hat{n}} \differential a
+\end{equation*}
+Changing magnetic flux through a surface induces an emf in any boundary path of that surface, and a changing magnetic field induces a circulating electric field.
+
+\textbf{Types of problems} \\
+(1) Given information about the changing magnetic flux, find the induced emf.
+
+(2) Given the induced emf on a specified path, determine the rate of change of the magnetic field magnitude or direction or the area bounded by the path.
+
+\subsection*{Faraday's law: differential form}
+\begin{equation*}
+    \curl \mathbf{E} = - \pdv{\mathbf{B}}{t}
+\end{equation*}
+A circulating electric field is produced by a magnetic field that changes with time.
+
+\subsection*{Ampere-Maxwell law: integral form}
+\begin{equation*}
+    \oint_C \mathbf{B} \cdot \differential \mathbf{l} = \mu_0 \left(I_{\textrm{enc}} + \epsilon_0 \dv{t}\int_S \mathbf{E} \cdot \mathbf{\hat{n}} \differential a\right)
+\end{equation*}
+An electric current or a changing electric flux through a surface produces a circulating magnetic field around any path that bounds that surface.
+
+\subsection*{Ampere-Maxwell law: differential form}
+\begin{equation*}
+    \curl B = \mu_0 \left(\mathbf{J} + \epsilon_0 \pdv{\mathbf{E}}{t}\right)
+\end{equation*}
+A circulating magnetic field is produced by an electric current and by an electric field that changes with time.
+
 \section{Electromagnetic Waves}
+The power density (energy per unit area per unit time) of an electromagnetic wave is the \textit{Poynting vector}:
+\begin{equation*}
+    \mathbf{S} = \frac{1}{\mu_0}\mathbf{E} \times \mathbf{B}
+\end{equation*}
+The waves are transverse, perpendicular to the direction of travel.
+
+Transverse oscillations in $\mathbf{E}$ are perpendicular to transverse oscillations in $\mathbf{B}$.
+
 Total energy stored per unit volume in an electromagnetic field is:
 \begin{equation*}
     e_{d} = \frac{1}{2}\epsilon_0 E^2 + \frac{1}{2}\frac{B^2}{\mu_0}
 \end{equation*}
 The energy carried by the wave is shared equally between \textbf{E} and \textbf{B} fields.
+
+\subsection*{Polarisation}
+
+\subsection*{Circular polarisation}
+Where polarisations do not have the same phase, but there is a phase difference of $\phi = 90^{\circ}$.
