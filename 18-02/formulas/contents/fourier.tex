@@ -96,3 +96,17 @@ The Fourier series can be expressed more simply and compactly in the notation of
 This is useful for the discrete Fourier transform and the fast Fourier transform.
 
 \subsection*{Fourier Transform}
+The fourier transform of a signal $f$ is
+\begin{equation*}
+    F(\omega) = \int_{-\infty}^{\infty} f(t) \exp(-i\omega t) \differential t.
+\end{equation*}
+$F$ is a function of a real variable $\omega$. 
+
+Generally, the function value of $F(\omega)$ is a complex number.
+\begin{equation*}
+    \begin{aligned}
+        F(\omega) &= A - iB \\
+        A &= \int_{-\infty}^{\infty} f(t) \cos(-i\omega t) \differential t \\
+        B &= \int_{-\infty}^{\infty} f(t) \sin(-i\omega t) \differential t.
+    \end{aligned}
+\end{equation*}
