@@ -8,63 +8,186 @@ These laws are completely empirical.
 \end{enumerate}
 
 \section{Properties of Gases}
-Ideal Gas Law $$pV = nRT$$
-
-\textbf{van der Waals.} Takes into account intermolecular interactions, and that gases take up space.
+\subsection*{Equations of state}
+\textbf{Ideal Gas Law}.
+\begin{equation*}
+    pV = nRT
+\end{equation*}
+\textbf{van der Waals equation.} Equation of state for a real gas.
 $$\left(p + \frac{a}{\bar{V}^2}\right) \left(\bar{V} - b\right) = RT$$ 
 
+$a$ representing molecular attractions and $b$ representing molecular repulsions.
+
+\section{Energetics and Equilibria}
+\subsection*{Useful conventions}
 If heat enters system, $q > 0$\\
 system does work on surroundings, $w < 0$\\
 surroundings do work on system, $w > 0$
 
-\section{Energetics and Equilibria}
+\subsection*{Internal energy \& enthalphy}
+\textbf{Enthalpy} is heat transfer at constant $p$, which is useful in laboratory conditions.
+\begin{equation*}
+    H = U + pV
+\end{equation*}
 
-Entropy of an isolated system increases in a spontaneous process.
+\textbf{Entropy} of an isolated system increases in a spontaneous process. Statistically,
+\begin{equation*}
+    S = k_B \ln \Omega.
+\end{equation*}
+Thermodynamically,
+\begin{equation*}
+    \differential S \geq \frac{\differential q_{\textrm{rev}}}{T}
+\end{equation*}
 
 \subsection*{Gibbs Energy}
 \begin{equation*}
     G = H - TS
 \end{equation*}
 In a spontaneous process $G$ of a system \textit{decreases} and reaches a minimum at equilibrium.
+\begin{equation*}
+    \begin{aligned}
+        \differential G &= -S \differential T \\
+        \differential G &= -V \differential p
+    \end{aligned}
+\end{equation*}
 
+$G$ varies with $p$ as shown:
+\begin{equation*}
+    G_m(p_2) = G_m(p_1) + RT \ln \left(\frac{p_2}{p_1}\right)
+\end{equation*}
+
+\columnbreak
 \subsection*{Chemical Equilibrium}
 \begin{equation*}
     \Delta_{\mathrm{r}}G^\standardstate = -RT \ln K
 \end{equation*}
+$K$ is the thermodynamic equilibrium constant: independent of pressure.
 
-\textbf{Van't Hoff Equation.}
+\textbf{Van't Hoff Equation.} Relates $K$ with $T$.
 
 \begin{equation*}
-    \odv{\ln K}{T} = \frac{\Delta_{\mathrm{r}}H^\standardstate}{RT^2}
+    \dv{\ln K}{T} = \frac{\Delta_{\mathrm{r}}H^\standardstate}{RT^2}
 \end{equation*}
-
 The integral form is more explicit, if we can assume that $\Delta_{\mathrm{r}}H^\standardstate$ does not change from $T_1$ to $T_2$.
 \begin{equation*}
     \ln K (T_2) - \ln K (T_1) = \frac{-\Delta_{\mathrm{r}}H^\standardstate}{R} \left(\frac{1}{T_2} - \frac{1}{T_1}\right)
 \end{equation*}
 Importantly, a plot of $\ln K$ against $1/T$ is a straight line with slope $-\Delta_{\mathrm{r}}H^\standardstate / R$.
 
-\section{Phase Equilibria and Mixtures}
+\section{Phase equilibria: pure substances}
 
-Also should figure out how to read a phase diagram.
-
-\subsection*{Clausius-Clapeyron}
-What is this shit?
+\textbf{Phase rule: degrees of freedom} is the number of intensive variables that can be varied independently
 \begin{equation*}
-    \frac{\mathrm{d}\ln p}{\mathrm{d}T} \approx \frac{\Delta H}{RT^2}
+    F = C - P + 2
 \end{equation*}
-which can be simplified into (why? what approximations am I making?)
+where $P$ is number of phases and $C$ is the number of components. $P = 4$ cannot exist for a one-component system.
+
+\subsection*{Liquid-vapour coexistence}
+At the \textbf{critical point}, interaction strength $\epsilon$ is similar to the thermal energy.
 \begin{equation*}
-    \ln\left(\frac{p_2}{p_1}\right) = \frac{\Delta H}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right)
+    \frac{k_bT_c}{\epsilon} \approx 1
 \end{equation*}
+Liquids are formed below the critical point, with intermolecular interactions of sufficient strength.
 
+\subsection*{Chemical potential}
+For pure substances, \textit{chemical potential} is molar Gibbs energy $\mu = G_m$. In mixtures, it is the \textit{partial}
+molar Gibbs energy.
 \begin{equation*}
-    \Delta V_{\mathrm{fus}} = \frac{1}{\rho_l} - \frac{1}{\rho_s}
+    \mu_i = \left(\pdv{G}{n_i}\right)_{p,T}
+\end{equation*}
+At equilibrium, the chemical potential of a substance is the same throughout every phase present in the system. This
+gives us the \textbf{coexistence condition}:
+\begin{equation*}
+    \mu(\alpha;p,T) = \mu(\beta;p,T)
 \end{equation*}
 
-\subsection*{Raoult's Law}
+\subsection*{Clausius-Clapeyron equation}
+The Clapeyron equation is an exact expression for the slope of a phase boundary.
+Thermodynamic data can be used to predict the slope of phase diagrams $\dv*{p}{T}$.
+\begin{equation*}
+    \dv{p}{T} = \frac{\Delta_{\textrm{trs}}S}{\Delta_{\textrm{trs}}V}
+\end{equation*}
+This has numerous applications, such as predicting how freezing and boiling points change when pressure is applied:
+\begin{equation*}
+    \dv{T}{p} = \frac{\Delta_{\textrm{trs}}V}{\Delta_{\textrm{trs}}S}
+\end{equation*}
+At the \textit{solid-liquid boundary},
+\begin{equation*}
+    \dv{p}{T} = \frac{\Delta_{\textrm{fus}}H}{T\Delta_{\textrm{fus}}V}
+\end{equation*}
+Usually, $\dv*{p}{T} > 0$, as the pressure is raised, the melting temperature rises.
 
-\subsection*{Henry's Law}
+At the \textit{liquid-vapour boundary},
+\begin{equation*}
+    \dv{p}{T} = \frac{\Delta_{\textrm{vap}}H}{T\Delta_{\textrm{vap}}V}
+\end{equation*}
+$\Delta_{\textrm{vap}}V$ is large, boiling $T$ is more responsive to pressure than freezing $T$.
+
+Sufficiently far from the critical point we assume the vapour is ideal, $V_m = RT / p$, giving the Clausius-Clapeyron equation, which tells us how vapour pressure varies with $T$.
+\begin{equation*}
+    \frac{\mathrm{d}\ln p}{\mathrm{d}T} \approx \frac{\Delta H_{\textrm{vap}}}{RT^2}
+\end{equation*}
+Integrating between $(p_1, p_2)$ and $(T_1, T_2),$
+\begin{equation*}
+    \begin{aligned}
+        \ln\left(\frac{p_2}{p_1}\right) &= \frac{\Delta H_{\textrm{vap}}}{R}\left(\frac{1}{T_1} - \frac{1}{T_2}\right) \\
+        p_2 &= p_1 \exp \left(- \frac{\Delta H_{\textrm{vap}}}{R}\left[\frac{1}{T_1} - \frac{1}{T_2}\right]\right)
+    \end{aligned}
+\end{equation*}
+
+\section{Phase equilibria: simple mixtures}
+
+\subsection*{Fundamental equation}
+Because the chemical potentials depend on composition (and $p$ and $T$), the Gibbs energy of a mixture may change when these variables change.
+\begin{equation*}
+    \differential G = -S \differential T + V \differential p + \mu_A \differential n_A + \mu_B \differential n_B
+\end{equation*}
+For a multi-component mixture,
+\begin{equation*}
+    \differential G = -S \differential T + V \differential p + \sum_i \mu_i \differential n_i
+\end{equation*}
+
+$\therefore$ total free energy of binary mixture at constant T and p is $G = \mu_A n_A + \mu_B n_B$.
+\subsection*{Gibbs-Duhem equation}
+At constant $p$ and $T$, chemical potentials of the components in a mixture cannot change independently.
+\begin{equation*}
+    n_A \differential \mu_A + n_B \differential \mu_B = 0.
+\end{equation*}
+For a multi-component mixture,
+\begin{equation*}
+    \sum_i n_i \differential \mu_i = 0
+\end{equation*}
+
+\subsection*{Mixtures of ideal gases}
+Variation of chemical potential with $p$:
+\begin{equation*}
+    \mu = \mu^\standardstate + RT \ln \left(\frac{p}{p^\standardstate}\right)
+\end{equation*}
+$\mu_\standardstate$ is the chemical potential of pure gas at 1 bar. Which becomes $ \mu = \mu^\standardstate + RT \ln p$. 
+Mixing of two ideal gases is \textit{spontaneous}, driven entirely by entropy $\because$ there are no intermolecular interactions.
+\vspace{\baselineskip}
+
+\textbf{Thermodynamic mixing functions.}
+\begin{equation*}
+    \begin{aligned}
+    \Delta_{\textrm{mix}}G &= nRT(x_A \ln x_A + x_B \ln x_B) \\
+    \Delta_{\textrm{mix}}S &= - \left( \pdv{\Delta_{\textrm{mix}}G}{T}\right)_p \\
+    &= -nR(x_A \ln x_A + x_B \ln x_B)
+    \end{aligned}
+\end{equation*}
+
+\subsection*{Raoult's law}
+This equation shows that we can obtain $\mu$ of a liquid by measuring
+change in its vapour pressure, givenvapour pressure of the pure liquid is $p_A^*$
+\begin{equation*}
+    \mu_A = \mu_A^* + RT \ln \left(\frac{p_A}{p_A^*}\right)
+\end{equation*}
+We assume the vapour pressure is given by \textbf{Raoult's law}.
+\begin{equation*}
+    p_A = x_A p_A^*
+\end{equation*}
+
+\subsection*{Henry's law}
 
 \subsection*{Colligative Properties}
 1. Vapour pressure lowering \\
@@ -72,7 +195,7 @@ $\Delta p_A = p_A - p^{*}_{A} = -x_B p^*_A$ \\
 2. Boiling point elevation \\
 3. Freezing point depression \\
 4. Osmotic pressure \\
-
+$\Pi = [B]RT$
 \subsection*{Debye H\"uckel theory}
 
 
