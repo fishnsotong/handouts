@@ -7,9 +7,27 @@ $V = RI$ \\
 $P = VI = I^2R = V^2/R$ \\
 $R = \rho L / A$
 
-Capacitance ($C$). A dielectric material can be polarised: dipoles can align in an electric field
+\textbf{Capacitance} $C$ is defined by $Q=C\phi$, gives a measure of how much charge a conductor can hold
+for a given potential.
+
+For a sphere and parallel-plate capacitor, their capacitances are:
+\begin{equation*}
+    C_{\textrm{sphere}} = 4 \pi \epsilon_0 r \quad C_{\textrm{plates}} \frac{\epsilon_0 A}{L}
+\end{equation*}
+
+The energy in a capacitor is
+\begin{equation*}
+    U = \frac{1}{2}C\phi^2 = \frac{Q^2}{2C} = \frac{1}{2}Q\phi
+\end{equation*}
+Between two parallel conducting plates, $\Delta \phi = Ed$. The energy density (energy stored per unit volume) is:
+\begin{equation*}
+    u_d = \frac{1}{2}\epsilon_0 E^2.
+\end{equation*}
+
+A dielectric material can be polarised: dipoles can align in an electric field
 but charges cannot move.
-$$Q = -C \Delta E = -\left(\frac{\epsilon A}{L}\right) \Delta E$$\underline{Nomenclature}
+
+\underline{Nomenclature}
 
 \textit{Cathode} - reduction occurs ($-$ve current)\\
 \textit{Anode} - oxidation occurs  (+ve current)\\
@@ -59,7 +77,10 @@ present and standard reduction potential ($E^\standardstate$).
 
 Nernst equation holds at electrochemical equilibrium.
 
-
+\begin{equation*}
+    Q = \prod_j \left(\frac{a_j}{a^\standardstate}\right)^{v_j}
+\end{equation*}
+where $v_j$ is the stoichiometric coefficient
 
 \textbf{Potentiostatic measurements.} Recalling $\Delta G = \Delta H - T \Delta S$, 
 $ \therefore - nFE = \Delta H - T \Delta S$. We can use electrochemical measurements to determine
@@ -72,6 +93,9 @@ is $\Delta S / nF$ and the intercept is $- \Delta H / nF$.
 \subsection*{Electron transfer kinetics}
 
 \textbf{Butler-Volmer equation}
+\begin{equation*}
+    j = j_0 \left( \exp \frac{(1 - \beta)qF\eta}{RT} - \exp \frac{-\beta q F \eta}{RT} \right)
+\end{equation*}
 
 \textbf{Eyring-Polanyi equation}
 

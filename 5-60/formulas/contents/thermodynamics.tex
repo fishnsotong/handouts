@@ -167,7 +167,7 @@ $\mu_\standardstate$ is the chemical potential of pure gas at 1 bar. Which becom
 Mixing of two ideal gases is \textit{spontaneous}, driven entirely by entropy $\because$ there are no intermolecular interactions.
 \vspace{\baselineskip}
 
-\textbf{Thermodynamic mixing functions.}
+\textbf{Thermodynamic mixing functions for ideal solutions.}
 \begin{equation*}
     \begin{aligned}
     \Delta_{\textrm{mix}}G &= nRT(x_A \ln x_A + x_B \ln x_B) \\
@@ -186,7 +186,7 @@ We assume the vapour pressure in ideal solutions is given by \textbf{Raoult's la
 \begin{equation*}
     p_A = x_A p_A^*
 \end{equation*}
-It follows from the two equations above that chemical potential in ideal solutions is given by
+It follows from the two equations above that \textit{chemical potential in ideal solutions} is given by
 \begin{equation*}
     \mu_A = \mu_A^* + RT \ln x_A
 \end{equation*}
@@ -196,32 +196,106 @@ Many mixtures significantly deviate from Raoult's law as they are non-ideal (wit
 \begin{equation*}
     p_B = x_B K_B
 \end{equation*}
-
-Positive deviations: \\
+Positive deviations ($K_B > p^*_B, \chi < 0$): \\
 A-B interactions $>$ A-A \& A-B interactions
 
-Negative deviations: \\
+Negative deviations ($K_B < p^*_B, \chi > 0$): \\
 A-B interactions $<$ A-A \& A-B interactions
 
+\subsection*{Regular solution theory}
+The enthalpy of mixing is non-zero in real solutions
+\begin{equation*}
+    \Delta_{\textrm{mix}}H - nRT \chi x_A x_B
+\end{equation*}
+Therefore,
+\begin{equation*}
+    \Delta_{\textrm{mix}}G = nRT(x_A \ln x_A + x_B \ln x_B + \chi x_A x_B)
+\end{equation*}
+
 \subsection*{Colligative properties}
-1. Vapour pressure lowering \\
-$\Delta p_A = p_A - p^{*}_{A} = -x_B p^*_A$ \\
-2. Boiling point elevation \\
-3. Freezing point depression \\
-4. Osmotic pressure \\
-$\Pi = [B]RT$
+All colligative properties occur because of reduction of the chemical potential of liquid solvent as a result of the presence of solute.
+
+\textbf{1. Vapour pressure lowering} \\
+From Raoult's law,
+\begin{equation*}
+    \Delta p_A = p_A - p^{*}_{A} = -x_B p^*_A
+\end{equation*}
+\textbf{2. Boiling point elevation} \\
+$\Delta T = K_b x_B$, $K_b$ is an empirical constant \\
+\textbf{3. Freezing point depression} \\
+$\Delta T = K_f x_B$, $K_f$ is an empirical constant \\
+The freezing point depression/boiling point elevation in the ideal solution is driven by entropy. The entropy of the solution (liquid + solute) is higher (two components) than the entropy of the pure liquid.
+
+\textbf{4. Osmotic pressure} \\
+Osmotic pressure $\Pi$, at low solute concentrations,
+$\Pi = [B]RT$. The `force' that chemical potential applies.
 
 \subsection*{Phase coexistence of mixtures}
+Where $x_A$ is the mole fraction of A in the liquid, and $y_A$ is the mole fraction of A in the vapour, the total pressure of ideal solution is given by \textit{Raoult's law}:
 \begin{equation*}
     \begin{aligned}
         p & = p_A + p_B \\
-        &= x_Ap_A^* + x_Ap_A^* \\
+        &= x_Ap_A^* + x_B p_B^* \\
         &= p^*_B + (p_A^* - p_B^*)x_A
     \end{aligned}
 \end{equation*}
+\begin{equation*}
+    y_A = \frac{x_Ap_A^*}{p} = \frac{x_Ap_A^*}{p^*_B + (p_A^* - p_B^*)x_A}
+\end{equation*}
 
+For $p_A^* = p_B^*$, liquid and vapour have the same composition.
+
+For $p_A^* > p_B^*$, A is more volatile, and the vapour is richer in A: $y_A > x_A$.
+
+For $p_B^* = 0$, B is non-volatile and does not add to vapour composition $\therefore y_A = 1$
+
+\textbf{Total vapour pressure is dependent on vapour composition}.
+\begin{equation*}
+    p = \frac{p_A^* p_B^*}{p^*_A + (p_B^* - p_A^*)y_A}
+\end{equation*}
+
+\textbf{Lever rule} is used to deduce relative abundances
+ of each phase in equilibrium, where $z_A$ is the
+ \begin{equation*}
+    \frac{n_l}{n_v} = \frac{z_A - y_A}{x_A - z_A}
+ \end{equation*}
+
+ An \textbf{azeotrope} is a liquid mixture that evaporates without a change in composition $x_A = y_A$.
+\subsection*{Actitvities}
+\textbf{Activity coefficient} $\gamma$ helps quantify non-idealities in solution.
+\begin{equation*}
+    \begin{aligned}
+        \mu_A &= \mu_A^* + RT \ln a_A \\
+        &= \mu_A^* + RT \ln (\gamma_A x_A)
+    \end{aligned}
+\end{equation*}
+
+We can measure the activity of an ideal-dilute solute: Henry's law $a_B = p_B / K_B$.
 \subsection*{Debye H\"uckel theory}
+Electrostatic interaction between ions is primarily responsible for non-idealities
+in solution; described by \textbf{Coulomb's law}.
+The force between two charges is
+\begin{equation*}
+  \mathbf{F} = \frac{1}{4\pi\epsilon_0}\frac{q_1q_2}{r_{21}}\hat{\mathbf{r}}
+\end{equation*}
 
+DH theory reasonably approximates the activity coefficient for ionic solutions at very low 
+concentrations. 
 
+% what shortcomings?
+
+The \textbf{Debye-H\"uckel limiting law}:
+\begin{equation*}
+    \log \gamma_\pm = - |z_+ z_-| AI^{1/2}
+\end{equation*}
+Ionic strength:
+\begin{equation*}
+    I = \frac{1}{2}\sum_i z_i^2 \frac{m_i}{m^\standardstate}
+\end{equation*}
+Mean ionic activity coefficient:
+\begin{equation*}
+    y_\pm = y_+ y_-
+\end{equation*}
+Difficult to measure empirically
 
  

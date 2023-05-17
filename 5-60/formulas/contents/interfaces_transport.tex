@@ -1,10 +1,22 @@
 \section{Interfaces}
 
 \subsection*{Fluid interfaces} % these include liquid-vapour interfaces, right?
+$\differential w = f \differential h = 2 \gamma l \differential h$
+\begin{equation*}
+    \Gamma_i = \frac{n_i(\sigma)}{\sigma}
+\end{equation*}
 
 \subsection*{Solid-liquid-vapour interfaces}
 
-\subsection*{Adsorption isotherms}
+\subsection*{Langmuir adsorption isotherm}
+\begin{equation*}
+    \pdv{\ln(KP^\standardstate)}{(1/T)} = - \left(\frac{\Delta_{\textrm{ads}}H}{R}\right)
+\end{equation*}
+
+\subsection*{BET adsorption isotherm}
+\begin{equation*}
+    Ka_x \exp(\frac{(\phi_M - \phi_S)F}{RT}) = \frac{\theta}{1 - \theta}
+\end{equation*}
 
 \section{Transport: molecules in motion}
 
@@ -12,7 +24,11 @@
 
 When considering mass transport, we may have to take into account
 
-\subsection*{Migration and diffusion} % is there a difference between migration and diffusion? maybe should just be diffusion
+\subsection*{Migration}
+Migration is motion due to an electric field due to Coulombic force.
+
+\subsection*{Diffusion} % is there a difference between migration and diffusion? maybe should just be diffusion
+Diffusion is motion due to a difference in chemical potential.
 
 \textbf{Diffusion coefficient.} $$D = \frac{k_B T}{6 \pi \eta a}$$
 
@@ -31,5 +47,43 @@ The diffusion coefficient $D$ can be used to find $u$.
 \end{equation*}
 
 \subsection*{Thermophoresis}
-
+Thermophoresis is particle drift induced by thermal gradients. A particle moving in a temperature gradient
+$\grad T$ will have a steady thermophoretic drift velocity $v_T$
+\begin{equation*}
+    \begin{aligned}
+        v_T &=-D_T \grad T \\
+        &= -D_T (T_2 - T_1)
+    \end{aligned}
+\end{equation*}
+$D_T$ is the thermal diffusion coefficient.
+By \textit{Fick's first law}, we see that mass flux of thermophoresis counteracts diffusion
+\begin{equation*}
+    J = -D \dv{c}{x} - c D_T \dv{T}{x}
+\end{equation*}
+Therefore when $J = 0$,
+\begin{equation*}
+    \begin{aligned}
+        \frac{c(T_2)}{c(T_1)} &= e^{-\frac{D_T}{D}(T_2 - T_1)} \\
+        &= e^{-S_T(T_2 - T_1)}
+    \end{aligned}
+\end{equation*}
+Soret coefficient $S_T$ is a measure of the strength of the thermophoretic molecule flow compared with ordinary diffusion.
+\begin{equation*}
+    S_T = \frac{D_T}{D}
+\end{equation*}
+$S_T > 0$ for a thermophobic particle and $S_T < 0$ for a thermophilic particle.
+\begin{equation*}
+    S_T = \frac{A}{kT} \left( - \Delta_{\textrm{hyd}}S(T) + \frac{\beta \sigma^2_{\textrm{eff}}}{4 \epsilon \epsilon_0T}\lambda_{\textrm{DH}}\right)
+\end{equation*}
 \subsection*{Magnetophoresis}
+Magnetophoresis is motion of particles due to an magnetic field. According to their magnetic susceptibility $\chi$,
+materials are classified as: \\
+ferromagnetic ($\chi >> 0$) \\
+paramagnetic ($\chi > 0$) \\
+diamagnetic ($\chi < 0$).
+
+The average velocity when $F_m = F_{\textrm{drag}}$ is:
+\begin{equation*}
+    v_{\textrm{mag}} = \frac{F_m}{6 \pi \eta a}
+\end{equation*}
+$\eta$ is  viscosity and $a$ is hydrodynamic size.
