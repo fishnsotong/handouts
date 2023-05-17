@@ -58,6 +58,11 @@ The distance travelled in one dimension by diffusion is $x = (2D_0t)^{1/2}$.
 
 \textbf{Double layer.} Layer of well-ordered
 
+The thickness of the electrical double layer can be estimated by Debye-H\"uckel
+\begin{equation*}
+    \lambda_D = \sqrt{\frac{\epsilon_r \epsilon_0RT}{2F^2Im^\standardstate\rho}} = \sqrt{\frac{\epsilon_r \epsilon_0 k_B T}{2N_A^2q_e^2Im^\standardstate\rho}}
+\end{equation*}
+
 \textbf{Sherwood number.} Does advection or diffusion dominate mass transport in the system?
 
 \textbf{ionic strength}
@@ -99,10 +104,24 @@ is $\Delta S / nF$ and the intercept is $- \Delta H / nF$.
 
 \textbf{Eyring-Polanyi equation}
 
+where $B = k_BT/h$.
+
 \textbf{Tafel plot}
 
 \subsection*{Processes at solid electrodes}
+\begin{equation*}
+    k_{\textrm{MT}} = \frac{D_O}{\delta_D} \quad j_{\textrm{MT}} = -qF k_{\textrm{MT}}a_{o^{Z+}}c^o
+\end{equation*}
+\begin{equation*}
+    z = \exp \left( \frac{qF(E - E_{1/2})}{RT} \right)
+\end{equation*}
 
+\begin{equation*}
+    \frac{1}{j_{\textrm{mix}}} = \frac{1}{j_{\textrm{kinetic}}} + \frac{1}{j_{\textrm{MT}}} 
+\end{equation*}
+\begin{equation*}
+    j_{\textrm{kinetic}} = \frac{j_{\textrm{MT}}j_{\textrm{mix}}}{j_{\textrm{MT}} - j_{\textrm{mix}}}
+\end{equation*}
 
 \subsection*{Final remarks}
 You can control potential and measure current (voltammetry) or you can control current
