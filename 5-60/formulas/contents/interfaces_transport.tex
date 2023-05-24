@@ -1,9 +1,41 @@
 \section{Interfaces}
 
-\subsection*{Fluid interfaces} % these include liquid-vapour interfaces, right?
+\subsection*{Fluid interfaces} 
+We need to do work to increase the area of an interface:
 $\differential w = f \differential h = 2 \gamma l \differential h$
+
+The magnitude of the surface tension $\gamma$ is proportional to the cohesive energy $u$, where $\sigma_m$ is molecular area
+\begin{equation*}
+    y \approx \frac{u}{2 \sigma_m}
+\end{equation*}
+
+$G$ quantifies the work associated to changes in the interfacial area at constant $T$ and $p$.
+\begin{equation*}
+    \differential G = -S \differential T + V \differential p  + \gamma \differential \sigma
+\end{equation*}
+which can be expressed as a partial derivative
+\begin{equation*}
+    \gamma = \left(\pdv{G}{\sigma}\right)_{T,p}
+\end{equation*}
+Interfacial area is minimised at equilibrium, forming curved surfaces.
+
+\textbf{Young-Laplace equation} gives us the pressure difference
+\begin{equation*}
+    \Delta P = p_i - p_o = \frac{2 \gamma}{r}
+\end{equation*}
+
+\textbf{Surface excess} informs us about the number of molecules per unit area
 \begin{equation*}
     \Gamma_i = \frac{n_i(\sigma)}{\sigma}
+\end{equation*}
+
+$\Gamma_i > 0$: positive adsorption of component at the surface - surface active
+
+$\Gamma_i < 0$: depletion of component i from the surface
+
+Adsorption of molecules modifies the surface/interfacial tension according to the \textbf{Gibbs isotherm}
+\begin{equation*}
+    \differential \gamma = - \sum_{i} \Gamma_i \differential \mu_i
 \end{equation*}
 
 \subsection*{Solid-liquid-vapour interfaces}
@@ -24,29 +56,84 @@ This is the electrosorption isotherm.
 \section{Transport: molecules in motion}
 
 \subsection*{Advection and mass transport}
-
-When considering mass transport, we may have to take into account
+Advection is bulk motion of a fluid due to stirring and flow.
 
 \subsection*{Migration}
-Migration is motion due to an electric field due to Coulombic force.
+Migration is motion due to an electric field by Coulombic force.
+
+conductivity $\sigma$ and resistivity $\rho$ of a material are related to current density $\mathbf{J}$, which is
+amount of current flowing per unit cross-sectional area $I = JA$.
+\begin{equation*}
+    \sigma = \frac{J}{E} \quad \rho = \frac{1}{\sigma} = \frac{E}{J}
+\end{equation*}
+
+Conductivity $\kappa$ to compare electrolytes $\kappa = 1/\rho = L/RA$. Molar conductivity to consider concentration effects
+\begin{equation*}
+    \Lambda_m = \frac{\kappa}{c}
+\end{equation*}
+
+$\Lambda_m$ of strong electrolytes decreases (a little)as concentration goes up. This is due to ion-ion and ion-solvent interactions.
+
+\textbf{Law of independent migration of ions} considers $\Lambda_m^o$, at infinite dilution where ions do not interact with each other.
+\begin{equation*}
+    \Lambda_m^o = n_{+} \lambda_{+}^o + n_{-} \lambda_{-}^o
+\end{equation*}
+
+\textbf{Factors affecting ion speed}
+
+(1) Driving force $F = zeE$
+
+(2) Frictional force $F = 6 \pi \eta a s$
+
+And we get an expression for the \textit{drift speed of an ion} in an \textbf{E} field:
+\begin{equation*}
+    s = \frac{zeE}{6 \pi \eta a}
+\end{equation*}
+where $a$ is the hydrodynamic radius, and $\eta$ is the viscosity coefficient.
+
+Mobility $u$ is defined by $s = uE$.
+
+\textbf{Drift speed of ions in electric field.} The mobility $u$ of an ion decreases with increasing solution viscosity and ion size.
+$$s = uE = \frac{ze}{6 \pi \eta a} E$$
 
 \subsection*{Diffusion} % is there a difference between migration and diffusion? maybe should just be diffusion
 Diffusion is motion due to a difference in chemical potential.
 
 \textbf{Diffusion coefficient.} $$D = \frac{k_B T}{6 \pi \eta a}$$
 
-where $a$ is the hydrodynamic radius, and $\eta$ is the viscosity coefficient.
+D doesn’t depend on charge (\textit{diffusion is not driven by charge effects}), D is inversely proportional to viscosity through the opposing effect of friction.
+
 
 Ions reach a terminal velocity when the electrical force applied on them is balanced
 by drag due to solvent viscosity.
 \vspace{\baselineskip}
 
-\textbf{Drift speed of ions in electric field.} The mobility $u$ of an ion decreases with increasing solution viscosity and ion size.
-$$s = uE = \frac{ze}{6 \pi \eta a} E$$
-
-The diffusion coefficient $D$ can be used to find $u$.
+The diffusion coefficient $D$ can be used to find mobility $u$.
 \begin{equation*}
     u = \frac{zeD}{k_B T}
+\end{equation*}
+by relating $s = uE$ and $s = DF /RT$. We can link conductivity parameters to $u$:
+\begin{equation*}
+    \lambda_m = |z|uF = \frac{z^2DF}{RT}
+\end{equation*}
+Limiting molar conductivity: 
+\begin{equation*}
+    \begin{aligned}
+        \Lambda_m^o &= (|z|_{+}u_{+}n_{+} + |z|_{-}u_{-}n_{-})F \\
+        &= (n_{+}z^2_{+}D_{+} + n_{-}z^2_{-}D_{-})\frac{F^2}{RT}
+    \end{aligned}
+\end{equation*}
+Can use conductivity to measure ionic diffusion coefficients.
+
+\textbf{Fick's First Law}
+Flux $J$ is given by the product of the diffusion coefficient and concentration gradient
+\begin{equation*}
+    J = -D \derivative{c}{x}
+\end{equation*}
+
+\textbf{Fick's Second Law}
+\begin{equation*}
+    \pdv{c}{t} = D \pdv[2]{c}{x}
 \end{equation*}
 
 \subsection*{Thermophoresis}
