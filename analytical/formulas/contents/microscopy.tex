@@ -1,21 +1,30 @@
 \section{Microscopy}
 
-\subsection*{Optical Microscopy}
+\subsection*{Optical microscopy}
 
-Lens equation. $$\frac{1}{u} + \frac{1}{v} = \frac{1}{f}$$
+\textbf{Lens equation.} The focal length $f$ is the distance of the image from the lens, when the object is at infinity ($u = \infty$). Position
+of the image $v$ can be deduced from the thin lens equation: $$\frac{1}{u} + \frac{1}{v} = \frac{1}{f}$$
+
+\textbf{Magnification.} The ratio is given by $v/u$.
 
 \textbf{Diffraction limit.} Resolution for optical microscopy is limited by \textit{diffraction}. This limit is ~250 nm for light microscopy 
 and ~100 nm for confocal. See \textit{Abbe's theorem}. $$a = \frac{\lambda}{2n \sin \alpha}$$
 
-Linear resolution limit.
+\textbf{Rayleigh criterion: spatial resolution.}
+\begin{equation*}
+    R = \frac{0.61 \lambda}{NA} = \frac{0.61 \lambda}{n \sin \alpha}
+\end{equation*}
 
-Angular resolution limit.
+\textbf{Rayleigh criterion: angular resolution.}
+\begin{equation*}
+    \theta = \frac{1.22 \lambda}{D}
+\end{equation*}
 
-Important thing is not to be confused between both.
+Conventionally, resolution is described as a distance for optical microscopes and as an angular resolution for EM, hence the two different forms of the equation.
 
-\subsection*{Electron Microscopy}
+\subsection*{Electron microscopy}
 
-Richardson's law. \textit{figure out what this is}
+Richardson's law.
 
 \begin{equation*}
     J_c = A_c T^2 \exp \left(- \frac{\Psi}{k_B T}\right)
@@ -23,9 +32,14 @@ Richardson's law. \textit{figure out what this is}
 
 Different varieties of electron microscopy exist for varying purposes.
 
-Scanning electron microscopy (SEM).
+\textbf{Scanning electron microscopy (SEM).} The wavelength of electrons is much shorter than that of visible light so electron microscopes have a much higher resolution.
+SEM is a direct method for producing a high magnification 3-dimensional image of a specimen, achieved by collecting electrons scattered from its surface. This involves fixing and drying the specimen before coating its surface with a thin layer of a heavy metal. The SEM provides a good depth of field and because the amount of electron scattering depends on the angle of the surface relative to the beam of electrons, the image has highlights and shadows which give it a 3- dimensional appearance.
 
-Transmission electron microscopy (TEM).
+\textbf{Transmission electron microscopy (TEM).} Contrast in the EM results from the scattering of electrons, so cells are stained with heavy metal salts (of osmium, lead and uranium) to create electron-dense stained regions. Electrons pass through unstained regions and are focused to form an image. As electrons would be scattered by collisions with molecules in the air, specimens must be viewed in a vacuum.
+
+Cells have to be fixed for electron microscopy and as electrons have only very limited penetrating power, extremely thin sections of cells embedded in plastic (50-100nm thick) must be cut for viewing. Clearly the preparation of material for EM is likely to introduce artifacts; working out which of the structures seen in the EM are real and which are artifacts has been a source of controversy since the introduction of this technique.
+
+Labelling of specific structures is possible in the EM, using antibodies (which bind to specific proteins in the cell) attached to gold particles.
 
 \subsection*{Aberrations (not examined)}
 Total optical aberration in a system takes into account the following sources of optical error with the equation below.
@@ -48,7 +62,7 @@ Spherical aberration.
     d_{\mathrm{S}}  = \frac{1}{2} C_{\mathrm{S}} \alpha^3
 \end{equation*}
 
-\textbf{Diffraction limit.} Which is the angular resolution for EM.
+\textbf{Diffraction limit.} Which is the angular resolution for EM, as previously seen.
 \begin{equation*}
     d_{\mathrm{d}} = \frac{1.22 \lambda}{\alpha}
-\end{equation*}
+\end{equation*}{}

@@ -1,38 +1,65 @@
 
 \section{X-Ray Diffraction}
+\subsection*{Lattice spacings}
+The distance between two equivalent planes is dependent on the type of plane.
+\vspace{\baselineskip}
 
-Spacings between lattice planes, for \\ crystals with orthogonal axes
+Spacings between lattice planes $d$, for \\ crystals with orthogonal axes:
 \begin{equation*}
   \frac{1}{d^2_{hkl}} = \frac{h^2}{a^2} + \frac{k^2}{b^2} + \frac{l^2}{c^2}
 \end{equation*}
 
-for crystals with cubic axes
+for crystals with cubic axes:
 \begin{equation*}
   d_{hkl} = \frac{a}{\sqrt{h^2 + k^2 + l^2}}
 \end{equation*}
+We refer to planes of atoms using Miller indices $(hkl)$ which equals the reciprocal of the intercepts of the plane with the coordinate axes. Lattice parameters
+are $a, b, c$ which is the magnitude of the basis vectors (unit cell edge vectors).
 
-
-\subsection*{Bragg Equation}
+\subsection*{Bragg equation}
+To find the lattice spacing $d$, we rely on the conditions required for there to be constructive interference, and hence, a diffraction peak.
 \begin{equation*}
   n \lambda = 2d \sin_{hkl} \theta
 \end{equation*}
-
-\subsection*{Calculating Structure Factors}
-This is important! We have to return and look at this thoroughly.
+We will observe a sharp peak at a special scattering angle, $2 \theta$ which arises only $\because$ path difference between waves is equal to $n \lambda$ -- an
+integer number of wavelengths. This path difference is equal to $2d \sin \theta$ using geometrical arguments.
 \begin{equation*}
-  F_{hkl} = \sum_{j} f_j \exp \left[2 \pi i \left( hx_j + ky_j + lz_j\right)\right]
+  \lambda = 2d \sin \theta
+\end{equation*}
+for the first order diffraction peak, $n=1$.
+
+\subsection*{Calculating structure factors}
+The \textbf{structure factor} is the sum of all the atomic scattering factors $f_j$, taking into account the relative phase factors $\phi_n$.
+\begin{equation*}
+  F_{hkl} = \sum_{j=1}^N f_j \exp \left[2 \pi i \left( hx_j + ky_j + lz_j\right)\right]
 \end{equation*}
 
-\subsection*{Other Useful Relations}
-Some potentially useful trigonometry.
-\vspace{\baselineskip}
-
+Useful trigonometry: \\
 $\exp{(2 \pi i)} = \cos 2\pi + i \sin 2\pi = 1$ \\
 $\exp{(\pi i)} = \cos \pi + i \sin \pi = -1$
 \vspace{\baselineskip}
 
-Scherrer equation.
+The \textit{diffracted intensity} is $I_{hkl} = |F_{hkl}|^2$. The intensity is also affected by multiplicity and geometric factors.
+\begin{equation*}
+  I_{hkl} \propto m_{hkl} |F_{hkl}|^2 g(\theta)
+\end{equation*}
+For centrosymmetric structures,
+\begin{equation*}
+  F_{hkl} = \pm |F_{hkl}|
+\end{equation*}
+\textbf{Electron density maps} are the inverse Fourier transform of the structure factor
+\begin{equation*}
+  \begin{aligned}
+    \rho(r) &= \rho(x,y,z) \\
+    &= \frac{1}{V} \sum_h \sum_k \sum_l F_{hkl} e^{-2 \pi i \left( hx + ky + lz\right)}
+  \end{aligned}
+\end{equation*}
+
+\subsection*{Powder diffraction}
+
+\textbf{Scherrer equation.} The peak width $\beta$ (in radians) is inversely proportional to crystallite size $t$ with correction factor $K$
 \begin{equation*}
   \beta = 2 \Delta \theta = \frac{K \lambda}{t \cos \theta}
 \end{equation*}
+Small crystals are the most common cause of line broadening; other defects can also cause peak widths to increase.
 
