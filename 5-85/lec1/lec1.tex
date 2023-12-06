@@ -1,0 +1,72 @@
+\documentclass[a4paper]{tufte-handout}
+
+\title{1.Introduction \thanks{Wayne~W.~Z. Yeo}}
+
+\author[MIT 5.85]{\textnormal{MIT 5.85} Molecular Reaction Dynamics\thanks{Course Instructors: Robert Field, Niels E. Henriksen \& Flemming Y. Hansen}}
+
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath,amsthm}  % extended mathematics
+\usepackage{physics,siunitx}
+\usepackage[version=4]{mhchem} \usepackage{chemmacros}
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\begin{document}
+
+\maketitle % this prints the handout title, author, and date
+
+\begin{abstract}
+\noindent
+Transition metals are elements whose atoms or cations possess partially filled d subshells, which result
+in them being stable at various oxidation states and forming coordination compounds with a wide diversity of
+ligands.
+\end{abstract}
+
+%\printclassoptions
+
+\newthought{What is the nature} of the forces at play in chemical reactivity? How can we 
+see the invisible and measure the ephemeral? 
+
+\section*{The simplest chemical reaction -- \textnormal{[\ce{H2 + H -> H + H2}]}}
+
+Because this reaction is constrained to react in a linear geometry, it has a \textit{perfectly symmetrical}
+potential energy. The transition state is in the centre of the curve of the 'half pipe'.
+
+\section{Summary}
+
+\begin{itemize}
+  \item Alkyl-metal and aryl-metal complexes are thermodynamically stable, but kinetically labile.
+  \item $\beta$-hydrogen elimination 
+  \item These processes are essentially in a number of catalytic processes, such as alkene polymerisation, cross-couplings and hydroformylations.
+  \item Also, they are key intermediates in \textbf{\ce{C-H} activation} processes. The transformation of unfunctionalised alkanes and arenes is one of the most active areas of research in the past twenty years \cite{guillemard2021late}.
+\end{itemize}
+
+\bibliography{lec1}
+\bibliographystyle{plainnat}
+
+\end{document}

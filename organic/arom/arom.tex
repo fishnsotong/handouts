@@ -1,0 +1,300 @@
+\documentclass{article} % For LaTeX2e
+\usepackage{amsmath,amsthm} 
+\usepackage[euler]{textgreek} % For greek letters in normal text
+\usepackage[version=4]{mhchem} % For typical chemical formulas and symbols
+
+\usepackage{../../nips13submit_e,times}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
+%\documentstyle[nips13submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{Heteroaromatics}
+
+
+\author{
+Wayne Yeo\thanks{wwzyeo@gmail.com} \\
+Imperial College London
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newenvironment{justification} {\begin{proof}[Justification]} {\end{proof}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+
+
+\nipsfinalcopy % Uncomment for camera-ready version
+
+\begin{document}
+
+\maketitle
+
+Here we review the synthesis and reactivity of 
+
+\section{Typical reactivity}
+
+Hückel Molecular Orbital Theory predicts that
+
+The chemistry of organometallic compounds is largely driven by the unique character
+of the \ce{C-M} bond. Because metals are much more electropositive than carbon, these
+bonds are characterised by their high degree of polarity, which leads to the \textsigma\space
+bond being polarised towards carbon.
+
+\begin{table}[ht]
+   \caption{Comapring Pauling electronegativities}
+   \label{electronegativity-table}
+   \begin{center}
+   \begin{tabular}{ll}
+   \multicolumn{1}{c}{\bf Element}  &\multicolumn{1}{c}{\bf{Pauling scale} $\chi$}
+   \\ \hline \\
+   Li         &0.98 \\
+   Mg         &1.31 \\
+   Ce         &1.12 \\
+   Cu         &1.90 \\
+   Zn         &1.65 \\
+   C          &2.55 \\
+
+   \end{tabular}
+   \end{center}
+   \end{table}
+   
+
+\subsection*{Solvents}
+The solvents used in the preparation and execution of polar organometallic reactivity are all ethers.
+Typically, this is diethyl ether (\ce{Et2O}) or THF. Other solvents that are sometimes used include
+dioxane and dimethoxyethane.
+
+\begin{figure}[ht]
+   \begin{center}
+      \includegraphics{ios_scan_3410543749.pdf}
+   \end{center}
+\end{figure}
+
+\subsection*{Metal-halogen exchange}
+
+In the following sections, we discuss the main classes of polar organometallic reagents
+we encounter in synthesis. \textit{It may be easier to treat Grignard reagents as the
+standard, and compare other organometallics to these}.
+
+\section{Grignard reagents}
+
+\subsection{Use in 1,4 conjugate addition}
+
+Typically, Grignard reagents have a high charge density and are \textbf{hard nucleophiles},
+strongly favouring reactions with hard electrophilic centres according to HSAB theory. As such,
+we would typically expect them to perform 1,2 direct addition to an \textalpha,\textbeta-unsaturated
+carbonyl.
+
+\section{Organolithiums}
+
+\ce{C-M} bonds are polarised to an extremely high degree, more so than Grignard reagents.
+In fact, MeLi, which is the simplest organolithium, is an ionic solid.
+
+\subsection{Lithium-halogen exchange}
+
+\textit{Why doesn't the organolithium decompose?} When \ce{CH3Li} or \textit{n}-\ce{BuLi} is
+used in halogen-metal exchange, a rather eletrophilic \ce{MeX} or \textit{n}-\ce{BuX} is obtained
+as a byproduct. The resulting alkyl halide can undergo S\textsubscript{N}2 substituion with the
+organolithium compound as a nucleophile. Given that the organolithium species is highly reactive,
+we would expect this side reaction to be a concern.
+
+However, S\textsubscript{N}2 reactions of organolithium compounds with alkyl halides are rather
+slow at the low temperatures at which halogen-metal exchange is usually executed, so this side
+reaction is usually not a problem. This is a good example of \textbf{reaction kinetic control}, 
+where there is insufficient kinetic energy to cross the activation barrier for thermodynamically
+favourable side reactions.
+
+\section{Organocuprates}
+
+Organocuprates, or dialkylcopper reagents are far less reactive than their lithium or
+magnesium counterparts, and can therefore be useful at introducing \textbf{chemoselectivity} in synthesis.
+
+\section{Organozinc}
+
+\section{Organocerium}
+
+Though not a typical part of a typical undergraduate chemistry curriculum, organocerium 
+reagents are interesting because they are so different from what we typically encounter.
+These reagents also offer an import synthetic utility.
+
+
+
+
+
+\section{General formatting instructions}
+\label{gen_inst}
+
+The text must be confined within a rectangle 5.5~inches (33~picas) wide and
+9~inches (54~picas) long. The left margin is 1.5~inch (9~picas).
+Use 10~point type with a vertical spacing of 11~points. Times New Roman is the
+preferred typeface throughout. Paragraphs are separated by 1/2~line space,
+with no indentation.
+
+Paper title is 17~point, initial caps/lower case, bold, centered between
+2~horizontal rules. Top rule is 4~points thick and bottom rule is 1~point
+thick. Allow 1/4~inch space above and below title to rules. All pages should
+start at 1~inch (6~picas) from the top of the page.
+
+%The version of the paper submitted for review should have ``Anonymous Author(s)'' as the author of the paper.
+
+For the final version, authors' names are
+set in boldface, and each name is centered above the corresponding
+address. The lead author's name is to be listed first (left-most), and
+the co-authors' names (if different address) are set to follow. If
+there is only one co-author, list both author and co-author side by side.
+
+Please pay special attention to the instructions in section \ref{others}
+regarding figures, tables, acknowledgments, and references.
+
+\section{Headings: first level}
+\label{headings}
+
+First level headings are lower case (except for first word and proper nouns),
+flush left, bold and in point size 12. One line space before the first level
+heading and 1/2~line space after the first level heading.
+
+\subsection{Headings: second level}
+
+Second level headings are lower case (except for first word and proper nouns),
+flush left, bold and in point size 10. One line space before the second level
+heading and 1/2~line space after the second level heading.
+
+\subsubsection{Headings: third level}
+
+Third level headings are lower case (except for first word and proper nouns),
+flush left, bold and in point size 10. One line space before the third level
+heading and 1/2~line space after the third level heading.
+
+\section{Citations, figures, tables, references}
+\label{others}
+
+These instructions apply to everyone, regardless of the formatter being used.
+
+\subsection{Citations within the text}
+
+Citations within the text should be numbered consecutively. The corresponding
+number is to appear enclosed in square brackets, such as [1] or [2]-[5]. The
+corresponding references are to be listed in the same order at the end of the
+paper, in the \textbf{References} section. (Note: the standard
+\textsc{Bib\TeX} style \texttt{unsrt} produces this.) As to the format of the
+references themselves, any style is acceptable as long as it is used
+consistently.
+
+As submission is double blind, refer to your own published work in the 
+third person. That is, use ``In the previous work of Jones et al.\ [4]'',
+not ``In our previous work [4]''. If you cite your other papers that
+are not widely available (e.g.\ a journal paper under review), use
+anonymous author names in the citation, e.g.\ an author of the
+form ``A.\ Anonymous''. 
+
+
+\subsection{Footnotes}
+
+Indicate footnotes with a number\footnote{Sample of the first footnote} in the
+text. Place the footnotes at the bottom of the page on which they appear.
+Precede the footnote with a horizontal rule of 2~inches
+(12~picas).\footnote{Sample of the second footnote}
+
+\subsection{Figures}
+
+All artwork must be neat, clean, and legible. Lines should be dark
+enough for purposes of reproduction; art work should not be
+hand-drawn. The figure number and caption always appear after the
+figure. Place one line space before the figure caption, and one line
+space after the figure. The figure caption is lower case (except for
+first word and proper nouns); figures are numbered consecutively.
+
+Make sure the figure caption does not get separated from the figure.
+Leave sufficient space to avoid splitting the figure and figure caption.
+
+You may use color figures. 
+However, it is best for the
+figure captions and the paper body to make sense if the paper is printed
+either in black/white or in color.
+\begin{figure}[h]
+\begin{center}
+%\framebox[4.0in]{$\;$}
+\fbox{\rule[-.5cm]{0cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+\end{center}
+\caption{Sample figure caption.}
+\end{figure}
+
+\subsection{Tables}
+
+All tables must be centered, neat, clean and legible. Do not use hand-drawn
+tables. The table number and title always appear before the table. See
+Table~\ref{sample-table}.
+
+Place one line space before the table title, one line space after the table
+title, and one line space after the table. The table title must be lower case
+(except for first word and proper nouns); tables are numbered consecutively.
+
+\begin{table}[t]
+\caption{Sample table title}
+\label{sample-table}
+\begin{center}
+\begin{tabular}{ll}
+\multicolumn{1}{c}{\bf PART}  &\multicolumn{1}{c}{\bf DESCRIPTION}
+\\ \hline \\
+Dendrite         &Input terminal \\
+Axon             &Output terminal \\
+Soma             &Cell body (contains cell nucleus) \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Final instructions}
+Do not change any aspects of the formatting parameters in the style files.
+In particular, do not modify the width or length of the rectangle the text
+should fit into, and do not change font sizes (except perhaps in the
+\textbf{References} section; see below). Please note that pages should be
+numbered.
+
+\subsubsection*{Recommended reading}
+
+A good textbook on calculus ar the level required by the physical sciences
+is the book, \emph{Calculus with Analytic Geometry} by George Simmons. For
+a more formal treatment, see books both named \emph{Calculus} by Tom Apostol
+and Michael Spivak.
+
+\subsubsection*{References}
+
+References follow the acknowledgments. Use unnumbered third level heading for
+the references. Any choice of citation style is acceptable as long as you are
+consistent. It is permissible to reduce the font size to `small' (9-point) 
+when listing the references. {\bf Remember that this year you can use
+a ninth page as long as it contains \emph{only} cited references.}
+
+\pagebreak
+
+\small{
+[1] Alexander, J.A. \& Mozer, M.C. (1995) Template-based algorithms
+for connectionist rule extraction. In G. Tesauro, D. S. Touretzky
+and T.K. Leen (eds.), {\it Advances in Neural Information Processing
+Systems 7}, pp. 609-616. Cambridge, MA: MIT Press.
+
+[2] Bower, J.M. \& Beeman, D. (1995) {\it The Book of GENESIS: Exploring
+Realistic Neural Models with the GEneral NEural SImulation System.}
+New York: TELOS/Springer-Verlag.
+
+[3] Hasselmo, M.E., Schnell, E. \& Barkai, E. (1995) Dynamics of learning
+and recall at excitatory recurrent synapses and cholinergic modulation
+in rat hippocampal region CA3. {\it Journal of Neuroscience}
+{\bf 15}(7):5249-5262.
+}
+
+\end{document}
