@@ -10,6 +10,13 @@ Finite additivity: If $A \cap B = \emptyset$, then
 
 $P(A \cup B) = P(A) + P(B)$.
 
+\subsection*{Consequences of the Axioms}
+If $P(A) \geq 0$, then $P(A) \leq 1$
+
+If $P(\Omega) = 1$, then $P(\emptyset) = 0$
+
+$A, B$ disjoint: $P(A \cup B) = P(A) + P(B)$
+
 \subsection*{Venn Diagrams}
 \begin{tikzpicture}[scale=.45]
     \begin{scope}
@@ -47,3 +54,38 @@ $P(A \cup B) = P(A) + P(B)$.
 \end{tikzpicture}
 
 % maybe can figure out how to centre the Venn diagram?
+
+\section{Conditonal Probability}
+\textbf{Definition.} $P(A \mid B)$ is the probability of $A$, given that $B$ occurred.
+
+$$P(A|B) = \frac{P(A \cup B)}{P(B)}$$
+
+\subsection*{Total probability theorem}
+
+$$P(B) = \sum_{i} P(A_i) P(B \mid A_i)$$
+\subsection*{Bayes' theorem}
+
+\section{Independence}
+\textbf{Definition.} $P(A \cup B) = P(A) P(B)$
+
+If $P(B) > 0$, $P(A \mid B) = P(A)$
+
+If $A$ and $B$ independent, so are $A$ and $B^c$
+
+\subsection*{Conditional independence}
+$P(A \cup B \mid C) = P(A \mid C) P(B \mid C)$
+
+Independence \textit{does not} imply conditional independence, and vice versa.
+
+\subsection*{Independence of several events}
+
+$$P \left( \bigcap_{i \in S} A_i \right) = \prod_{i \in S}P(A_i)$$
+
+\section{Counting}
+Permutations of $n$ objects: $n!$
+
+$k$-permutations of $n$ objects: $n!/(n-k)!$
+
+Combinations of $k$ out of $n$ objects:
+
+\section{Expectation, Mean and Variance}
